@@ -1,0 +1,12 @@
+{
+  "name": "tagalong",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "refresh": "node parser.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
