@@ -99,6 +99,20 @@
       "conf": true,
       "src": "hempsteadny.gov",
       "lastChecked": "2026-07-02"
+    },
+    {
+      "id": "pin-kids-bowl-free-varies-event",
+      "type": "event",
+      "name": "Kids Bowl Free",
+      "deal": "2 free bowling games every day, all summer",
+      "day": "varies",
+      "start": "",
+      "end": "",
+      "loc": "Register for your local center (zip 11010)",
+      "note": "Sign up once at kidsbowlfree.com. Most centers Mon-Sat, ~May to Sept. Ages vary (often up to 15). Shoe rental not included.",
+      "conf": true,
+      "src": "kidsbowlfree.com",
+      "lastChecked": "2026-07-02"
     }
   ]
 }

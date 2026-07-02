@@ -21,6 +21,12 @@ const API_KEY = process.env.ANTHROPIC_API_KEY;
 // right tier here: strong reading, cheap enough to run weekly across sources.
 const MODEL = "claude-sonnet-5";
 
+// BLOCKLIST: names to always drop from scraped results, even if a source
+// lists them. Add anything you don't want to appear. Case-insensitive.
+const BLOCKLIST = [
+  "spaghettini pizza trattoria",
+];
+
 // Franklin Square is central-west Nassau. Keep deals in/near these towns.
 const TARGET_AREA =
   "Franklin Square, Garden City, West Hempstead, Elmont, Mineola, Levittown, " +
@@ -37,6 +43,24 @@ const SOURCES = [
   { url: "https://www.njfamily.com/places-kids-eat-free-in-nj/", type: "food" },
   // Events feed (library storytimes, museum days, free community stuff):
   { url: "https://mommypoppins.com/long-island-kids", type: "events" },
+];
+
+// PINNED: hand-verified local spots that ALWAYS appear, no matter what the
+// weekly scrape returns. This is your safety net — add a deal here once you've
+// confirmed it in person and it will never get dropped by a refresh.
+const PINNED = [
+  { type:"food", name:"Moe's Southwest Grill", deal:"Kids eat free with an adult meal, all day",
+    day:0, start:"", end:"", loc:"Nassau County locations", note:"Most Nassau/Suffolk Moe's. Dine-in.", conf:true },
+  { type:"food", name:"Tap Room", deal:"Kids 12 & under free with a $15+ food item, all day",
+    day:2, start:"", end:"", loc:"Garden City (9 LI locations)", note:"Limit two kids per table.", conf:true },
+  { type:"food", name:"Miller's Ale House", deal:"Kids eat free with a $10 purchase",
+    day:2, start:"", end:"", loc:"Levittown", note:"Limit two kids per adult.", conf:true },
+  { type:"event", name:"Rath Park", deal:"Playground, wading pool & sports fields",
+    day:"varies", start:"", end:"", loc:"849 Fenworth Blvd, Franklin Square",
+    note:"Town of Hempstead park. Seasonal wading pool. District residency may apply.", conf:true },
+  { type:"event", name:"Kids Bowl Free", deal:"2 free bowling games every day, all summer",
+    day:"varies", start:"", end:"", loc:"Register for your local center (zip 11010)",
+    note:"Sign up once at kidsbowlfree.com. Most centers Mon–Sat, ~May to Sept. Ages vary (often up to 15). Shoe rental not included.", conf:true },
 ];
 
 // ---------------------------------------------------------------------------
@@ -155,6 +179,13 @@ async function main() {
   if (!API_KEY) throw new Error("Set ANTHROPIC_API_KEY first.");
   const merged = new Map();
 
+  // Pinned deals go in first and are protected from being overwritten.
+  for (const d of normalize(PINNED, "https://tagalong.local")) {
+    d.src = "verified locally";
+    merged.set(keyOf(d), d);
+  }
+  const pinnedKeys = new Set(merged.keys());
+
   for (const s of SOURCES) {
     try {
       console.log("Reading", s.url);
@@ -162,6 +193,8 @@ async function main() {
       const raw = await extract(text, s.type);
       for (const d of normalize(raw, s.url)) {
         if (!d.name || !d.deal) continue;
+        if (BLOCKLIST.includes(d.name.toLowerCase().trim())) continue; // dropped on purpose
+        if (pinnedKeys.has(keyOf(d))) continue; // never override a pinned deal
         // First verified source wins; otherwise keep what we have.
         const existing = merged.get(keyOf(d));
         if (!existing || (d.conf && !existing.conf)) merged.set(keyOf(d), d);

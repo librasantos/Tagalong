@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b3a58"/>
+      <stop offset="1" stop-color="#12293f"/>
+    </linearGradient>
+    <linearGradient id="tag" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb84a"/>
+      <stop offset="1" stop-color="#f5a524"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <g transform="rotate(-16 256 262)">
+    <!-- hanging string -->
+    <path d="M262 150 C238 122, 214 122, 196 140"
+          fill="none" stroke="#f6f4ee" stroke-width="14" stroke-linecap="round"/>
+    <!-- tag: a rounded rectangle with a pointed bottom -->
+    <path d="M196 168
+             h150
+             a26 26 0 0 1 26 26
+             v150
+             a26 26 0 0 1 -7.6 18.4
+             l-120 120
+             a30 30 0 0 1 -42.4 0
+             l-104 -104
+             a30 30 0 0 1 0 -42.4
+             l120 -120
+             a26 26 0 0 1 18.4 -7.6
+             Z"
+          fill="url(#tag)"/>
+    <!-- eyelet hole -->
+    <circle cx="300" cy="222" r="22" fill="#12293f"/>
+    <!-- coral sparkle -->
+    <path d="M212 296 l11 28 28 11 -28 11 -11 28 -11 -28 -28 -11 28 -11 Z" fill="#ef6f5b"/>
+  </g>
+</svg>
