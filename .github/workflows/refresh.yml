@@ -1,0 +1,31 @@
+name: Refresh deals
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run parser
+        run: node parser.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit fresh deals
+        run: |
+          git config user.name "tagalong-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add deals.json
+          git commit -m "Refresh deals" || echo "no changes"
+          git push
