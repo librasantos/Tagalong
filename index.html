@@ -366,9 +366,10 @@ function dateHeader(ds){
 }
 
 function renderGrouped(pool){
+  const conf=(a,b)=>(b.conf?1:0)-(a.conf?1:0);
   const dated=pool.filter(e=>e.date).sort((a,b)=> a.date<b.date?-1 : a.date>b.date?1 : (a.start||"").localeCompare(b.start||""));
-  const weekly=pool.filter(e=>!e.date && e.day!=="varies").sort((a,b)=>parseInt(a.day)-parseInt(b.day));
-  const anytime=pool.filter(e=>!e.date && e.day==="varies");
+  const weekly=pool.filter(e=>!e.date && e.day!=="varies").sort((a,b)=> conf(a,b) || parseInt(a.day)-parseInt(b.day));
+  const anytime=pool.filter(e=>!e.date && e.day==="varies").sort(conf);
   let html="", i=0, cur=null;
   for(const e of dated){ if(e.date!==cur){ cur=e.date; html+=`<div class="ghead">${dateHeader(e.date)}</div>`; } html+=cardHtml(e,i++); }
   if(weekly.length){ html+=`<div class="ghead">Every week</div>`; for(const e of weekly) html+=cardHtml(e,i++); }
@@ -389,7 +390,7 @@ function render(){
     list.innerHTML=renderGrouped(pool);
   }else{
     c.textContent=`${pool.length} spot${pool.length>1?"s":""}`;
-    list.innerHTML=pool.map((e,i)=>cardHtml(e,i)).join("");
+    list.innerHTML=pool.slice().sort((a,b)=>(b.conf?1:0)-(a.conf?1:0)).map((e,i)=>cardHtml(e,i)).join("");
   }
 }
 
