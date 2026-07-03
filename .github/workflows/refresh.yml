@@ -1,17 +1,24 @@
 name: Refresh deals
 
+# Runs the AI parser on a schedule and commits the updated scraped.json.
+# Vercel auto-redeploys when the commit lands. No servers, no manual upkeep.
+# The parser only writes scraped.json (auto-found + library events).
+# Your curated deals.json is never touched here.
+
 on:
   schedule:
-    - cron: "0 12 * * 1"
-  workflow_dispatch:
+    - cron: "0 12 * * 1"   # every Monday, 12:00 UTC (~7-8am ET)
+  workflow_dispatch: {}     # also lets you run it by hand from the Actions tab
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write        # needed so the bot can push the updated file
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # full history so the bot can rebase before pushing
 
       - uses: actions/setup-node@v4
         with:
@@ -26,6 +33,11 @@ jobs:
         run: |
           git config user.name "tagalong-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add deals.json
-          git commit -m "Refresh deals" || echo "no changes"
+          git add scraped.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Refresh deals ($(date -u +%Y-%m-%d))"
+          git pull --rebase --autostash origin ${{ github.ref_name }}
           git push
