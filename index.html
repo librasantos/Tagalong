@@ -10,153 +10,186 @@
 <meta name="apple-mobile-web-app-title" content="Tagalong" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="theme-color" content="#15304a" />
+<meta name="theme-color" content="#132433" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#15304a;        /* deep neighborhood navy */
-    --ink-soft:#4a6076;
-    --paper:#f6f4ee;      /* warm bulletin-board paper */
+    --ink:#132433;        /* deep navy, the anchor */
+    --ink-2:#1f3547;
+    --ivory:#faf6ec;      /* warm ivory */
     --card:#ffffff;
-    --sun:#f5a524;        /* free / deal marigold */
-    --grass:#2f9e6b;      /* events green */
-    --coral:#ef6f5b;      /* food coral */
-    --line:#e4ded1;
-    --shadow:0 1px 0 rgba(21,48,74,.04), 0 8px 24px -12px rgba(21,48,74,.18);
-    --radius:18px;
+    --gold:#c79138;       /* refined gold accent */
+    --gold-deep:#a9761f;
+    --gold-soft:#f0e2c4;
+    --berry:#c58a2b;      /* eat free — warm amber, no red */
+    --sage:#2fa268;       /* events — brighter */
+    --line:#e7dcc7;
+    --muted:#6a7f8f;
+    --serif:'Bricolage Grotesque',ui-rounded,system-ui,sans-serif;
+    --sans:'Nunito Sans',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  html,body{margin:0;background:var(--paper);color:var(--ink);
-    font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;}
-  body{padding-bottom:96px;}
+  html,body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  body{padding-bottom:112px;overflow-x:hidden;}
 
-  header.app{padding:22px 20px 8px;}
-  .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);}
-  h1{margin:2px 0 4px;font-size:30px;line-height:1.02;font-weight:800;letter-spacing:-.02em;}
-  .tag{margin:0;font-size:14px;line-height:1.35;color:var(--ink-soft);max-width:34ch;}
+  /* Masthead */
+  .top-rule{height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+  header.app{padding:22px 22px 4px;background:radial-gradient(120% 90% at 50% -30%, #fdeecf 0%, rgba(253,238,207,0) 62%);}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);}
+  .wordmark{font-family:var(--serif);font-weight:700;font-size:40px;letter-spacing:-.5px;line-height:1;margin-top:3px;}
+  .tagline{margin:12px 0 0;font-size:15.5px;line-height:1.4;color:var(--ink-2);max-width:32ch;font-weight:600;}
+  .byline{margin:8px 0 0;font-size:14px;font-weight:700;color:#7a4e97;display:flex;align-items:center;gap:7px;}
+  .byline .hrt{color:#a05fbf;font-size:15px;}
 
-  /* Day rail — the signature: deals live on days of the week */
-  .rail-wrap{position:sticky;top:0;z-index:20;background:linear-gradient(var(--paper) 72%,rgba(246,244,238,0));padding:12px 0 8px;}
-  .rail{display:flex;gap:8px;overflow-x:auto;padding:0 20px 4px;scrollbar-width:none;}
+  /* Strategy strip: the three moves (a real sequence, so numbered) */
+  .plays{display:flex;gap:8px;margin:16px 0 2px;}
+  .play{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px;}
+  .play .num{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--gold-deep);line-height:1;}
+  .play .lbl{margin-top:5px;font-size:11px;font-weight:600;color:var(--ink-2);line-height:1.25;letter-spacing:.01em;}
+
+  /* Day rail — the signature: freebies live on days */
+  .rail-wrap{position:sticky;top:0;z-index:20;padding:16px 0 8px;background:linear-gradient(var(--ivory) 70%,rgba(250,246,236,0));}
+  .rail{display:flex;gap:8px;overflow-x:auto;padding:0 22px 4px;scrollbar-width:none;}
   .rail::-webkit-scrollbar{display:none;}
-  .day{flex:0 0 auto;min-width:52px;text-align:center;padding:8px 4px;border-radius:14px;
-    background:var(--card);border:1.5px solid var(--line);cursor:pointer;transition:.16s;}
-  .day .d{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-transform:uppercase;}
-  .day .n{font-size:17px;font-weight:800;margin-top:1px;}
-  .day.on{background:var(--ink);border-color:var(--ink);color:#fff;transform:translateY(-1px);box-shadow:var(--shadow);}
-  .day.on .d{color:var(--sun);}
-  .day.all{min-width:auto;padding:8px 14px;display:flex;align-items:center;font-weight:800;font-size:14px;}
+  .day{flex:0 0 auto;min-width:54px;text-align:center;padding:9px 6px;border-radius:14px;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);transition:transform .18s cubic-bezier(.2,.9,.3,1.3),background .16s,border-color .16s;position:relative;}
+  .day:active{transform:scale(.94);}
+  .day .d{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;}
+  .day .n{font-family:var(--serif);font-size:19px;font-weight:600;margin-top:2px;line-height:1;}
+  .day.today::after{content:"";position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px var(--card);}
+  .day.on{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 12px 22px -12px rgba(19,36,51,.75);animation:daypop .32s cubic-bezier(.2,.9,.3,1.4);}
+  .day.on.today::after{box-shadow:0 0 0 3px var(--ink);}
+  @keyframes daypop{0%{transform:scale(.9)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+  .day.on .d{color:var(--gold);}
+  .day.all{min-width:auto;padding:9px 16px;display:flex;align-items:center;font-weight:600;font-size:13.5px;}
 
-  /* Type toggle */
-  .types{display:flex;gap:8px;padding:6px 20px 4px;}
-  .chip{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;
-    font-size:13px;font-weight:700;color:var(--ink-soft);cursor:pointer;transition:.15s;}
-  .chip.on{color:#fff;border-color:transparent;}
-  .chip.on.food{background:var(--coral);}
-  .chip.on.event{background:var(--grass);}
-  .chip.on.allc{background:var(--ink);}
+  /* Filter tabs as pills */
+  .types{display:flex;gap:9px;padding:12px 22px 2px;}
+  .tab{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:9px 17px;
+    font-family:var(--sans);font-size:14px;font-weight:700;color:var(--muted);cursor:pointer;transition:.15s;}
+  .tab.on{background:var(--ink);color:#fff;border-color:var(--ink);}
 
-  .count{padding:12px 20px 2px;font-size:13px;color:var(--ink-soft);font-weight:600;}
+  .count{padding:16px 24px 4px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .ghead{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--ink);letter-spacing:.2px;
+    margin:22px 6px 2px;display:flex;align-items:center;gap:9px;}
+  .ghead::after{content:"";flex:1;height:1px;background:var(--line);}
+  main>.ghead:first-child{margin-top:6px;}
 
-  main{padding:4px 20px 20px;display:flex;flex-direction:column;gap:12px;}
+  main{padding:2px 20px 20px;display:flex;flex-direction:column;gap:12px;}
 
-  .card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
-    padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
-  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;}
-  .card.food::before{background:var(--coral);}
-  .card.event::before{background:var(--grass);}
-  .card .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
-  .badge{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap;}
-  .badge.food{background:#fdeae6;color:#c34a37;}
-  .badge.event{background:#e4f4ec;color:#1f7a50;}
-  .name{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:0;line-height:1.15;}
-  .deal{font-size:14.5px;font-weight:700;color:var(--sun);margin:4px 0 0;}
-  .deal.warn{color:var(--ink-soft);}
-  .meta{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:var(--ink-soft);}
-  .meta b{color:var(--ink);font-weight:700;}
-  .note{margin:8px 0 0;font-size:13px;color:var(--ink-soft);line-height:1.4;}
-  .src{margin-top:10px;font-size:11.5px;color:#9aa7b2;font-weight:600;display:flex;align-items:center;gap:6px;}
-  .unconf{color:#c98a12;background:#fdf3df;border-radius:6px;padding:2px 7px;font-weight:700;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 15px 22px;position:relative;overflow:hidden;
+    box-shadow:0 2px 0 rgba(19,36,51,.03), 0 16px 30px -20px rgba(19,36,51,.42);
+    opacity:0;transform:translateY(12px) scale(.985);animation:rise .44s cubic-bezier(.2,.9,.3,1.15) forwards;}
+  .card.food{background:linear-gradient(180deg,#fefaf1,#ffffff 46%);border-color:#f1e6cf;}
+  .card.event{background:linear-gradient(180deg,#f3f8f4,#ffffff 46%);border-color:#dcebe1;}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;}
+  .card.food::before{background:var(--berry);}
+  .card.event::before{background:var(--sage);}
+  @keyframes rise{to{opacity:1;transform:translateY(0) scale(1);}}
+  .catpill{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+  .card.food .catpill{background:#fbeede;color:var(--berry);}
+  .card.event .catpill{background:#e3f2e9;color:var(--sage);}
+  .name{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:-.2px;margin:2px 76px 0 0;line-height:1.15;}
+  .deal{display:inline-block;margin:9px 0 0;font-size:15px;font-weight:700;color:var(--gold-deep);line-height:1.35;
+    background:#fbf1dd;padding:8px 13px;border-radius:12px;}
+  .deal.warn{color:var(--muted);background:#f2ece0;}
+  .rule{height:1px;background:var(--line);margin:13px 0 0;}
+  .meta{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:5px 8px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);}
+  .meta .when{color:var(--ink);}
+  .meta .sep{color:var(--gold);}
+  .note{margin:11px 0 0;font-size:15.5px;line-height:1.6;color:var(--ink-2);font-weight:500;}
+  .src{margin-top:10px;font-size:11px;color:#a8b4bd;font-weight:600;letter-spacing:.02em;}
+  .unconf{color:var(--gold-deep);font-weight:700;}
 
-  .actions{display:flex;gap:8px;margin-top:13px;}
-  .btn{flex:1;border:none;border-radius:12px;padding:11px;font-size:13.5px;font-weight:800;cursor:pointer;
-    font-family:inherit;transition:.15s;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;}
+  .actions{display:flex;gap:9px;margin-top:15px;}
+  .btn{flex:1;border:none;border-radius:11px;padding:12px;font-family:var(--sans);font-size:13.5px;font-weight:600;
+    cursor:pointer;transition:.13s;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;letter-spacing:.02em;}
   .btn.cal{background:var(--ink);color:#fff;}
-  .btn.cal:disabled{background:#e9e4d9;color:#a7b0b8;cursor:not-allowed;}
-  .btn.ver{background:#fff;color:var(--ink);border:1.5px solid var(--line);flex:0 0 auto;padding:11px 14px;}
-  .btn:active{transform:scale(.98);}
+  .btn.cal:active{transform:scale(.98);}
+  .btn.cal:disabled{background:#eadfcb;color:#b3b0a2;cursor:not-allowed;}
+  .btn.ver{flex:0 0 auto;padding:12px 16px;background:var(--card);color:var(--ink);border:1px solid var(--line);}
+  .btn.cal.soft{background:#f3ede1;color:var(--muted);cursor:default;}
 
-  .empty{text-align:center;padding:48px 24px;color:var(--ink-soft);}
-  .empty .big{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:6px;}
+  .empty{text-align:center;padding:52px 26px;color:var(--muted);}
+  .empty .big{font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:6px;}
 
-  /* Add button */
-  .fab{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;z-index:40;
-    background:var(--sun);color:#3a2600;border:none;border-radius:999px;padding:15px 26px;
-    font-family:inherit;font-size:15px;font-weight:800;box-shadow:0 10px 28px -8px rgba(245,165,36,.7);
-    cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .fab{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:40;
+    background:var(--ink);color:#fff;border:none;border-radius:999px;padding:14px 26px;
+    font-family:var(--sans);font-size:14.5px;font-weight:600;cursor:pointer;letter-spacing:.02em;
+    box-shadow:0 16px 30px -12px rgba(19,36,51,.7);display:flex;align-items:center;gap:8px;transition:.14s;}
+  .fab .plus{color:var(--gold);font-size:17px;line-height:1;}
   .fab:active{transform:translateX(-50%) scale(.97);}
 
-  /* Sheet */
-  .scrim{position:fixed;inset:0;background:rgba(21,48,74,.42);z-index:50;opacity:0;pointer-events:none;transition:.2s;}
-  .scrim.open{opacity:1;pointer-events:auto;}
-  .sheet{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--paper);
-    border-radius:24px 24px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));
-    transform:translateY(100%);transition:.26s cubic-bezier(.2,.8,.2,1);max-height:92vh;overflow-y:auto;}
-  .sheet.open{transform:translateY(0);}
-  .grip{width:40px;height:4px;border-radius:99px;background:var(--line);margin:0 auto 14px;}
-  .sheet h2{margin:0 0 2px;font-size:22px;font-weight:800;letter-spacing:-.01em;}
-  .sheet p.sub{margin:0 0 16px;font-size:13.5px;color:var(--ink-soft);}
-  label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 6px;}
-  input,select,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);
-    background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 13px;}
-  textarea{resize:none;min-height:60px;}
-  .row2{display:flex;gap:10px;}
-  .row2>div{flex:1;}
-  .seg{display:flex;gap:8px;}
-  .seg button{flex:1;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:12px;
-    font-family:inherit;font-weight:800;font-size:14px;color:var(--ink-soft);cursor:pointer;}
-  .seg button.on.food{background:var(--coral);color:#fff;border-color:transparent;}
-  .seg button.on.event{background:var(--grass);color:#fff;border-color:transparent;}
-  .save{width:100%;margin-top:22px;background:var(--ink);color:#fff;border:none;border-radius:14px;
-    padding:15px;font-family:inherit;font-size:16px;font-weight:800;cursor:pointer;}
-  .save:active{transform:scale(.99);}
-  .cancel{width:100%;margin-top:8px;background:none;border:none;color:var(--ink-soft);font-family:inherit;
-    font-weight:700;font-size:14px;padding:8px;cursor:pointer;}
+  .toast{position:fixed;left:50%;bottom:94px;transform:translateX(-50%) translateY(18px);z-index:70;
+    background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:999px;
+    box-shadow:0 14px 30px -12px rgba(19,36,51,.6);opacity:0;pointer-events:none;transition:.28s;}
+  .toast .g{color:var(--gold);}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-  footer{text-align:center;padding:8px 30px 30px;font-size:11.5px;color:#9aa7b2;line-height:1.5;}
+  .scrim{position:fixed;inset:0;background:rgba(19,36,51,.5);z-index:50;opacity:0;pointer-events:none;transition:.2s;}
+  .scrim.open{opacity:1;pointer-events:auto;}
+  .sheet{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ivory);border-radius:24px 24px 0 0;
+    padding:20px 22px calc(22px + env(safe-area-inset-bottom));transform:translateY(100%);
+    transition:.28s cubic-bezier(.2,.8,.2,1);max-height:92vh;overflow-y:auto;}
+  .sheet.open{transform:translateY(0);}
+  .grip{width:40px;height:4px;border-radius:99px;background:var(--line);margin:0 auto 15px;}
+  .sheet h2{font-family:var(--serif);margin:0 0 3px;font-size:24px;font-weight:600;}
+  .sheet p.sub{margin:0 0 16px;font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+  label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:15px 0 6px;}
+  input,select,textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);
+    border:1px solid var(--line);border-radius:11px;padding:12px 13px;}
+  textarea{resize:none;min-height:60px;}
+  .row2{display:flex;gap:10px;}.row2>div{flex:1;}
+  .seg{display:flex;gap:9px;}
+  .seg button{flex:1;border:1px solid var(--line);background:var(--card);border-radius:11px;padding:13px;
+    font-family:var(--sans);font-weight:600;font-size:14px;color:var(--muted);cursor:pointer;}
+  .seg button.on.food{background:var(--berry);color:#fff;border-color:transparent;}
+  .seg button.on.event{background:var(--sage);color:#fff;border-color:transparent;}
+  .save{width:100%;margin-top:22px;background:var(--ink);color:#fff;border:none;border-radius:13px;
+    padding:15px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;letter-spacing:.02em;}
+  .cancel{width:100%;margin-top:8px;background:none;border:none;color:var(--muted);font-family:var(--sans);font-weight:600;font-size:14px;padding:9px;cursor:pointer;}
+
+  footer{text-align:center;padding:8px 34px 36px;font-size:11px;color:#a8b4bd;line-height:1.7;}
+  footer b{color:var(--muted);}
 </style>
 </head>
 <body>
+<div class="top-rule"></div>
+
 <header class="app">
-  <div class="kicker">Franklin Square, NY</div>
-  <h1>Tagalong</h1>
-  <p class="tag">Free eats and free fun for the kids, kept current by parents like you.</p>
+  <div class="eyebrow">Franklin Square, NY</div>
+  <div class="wordmark">Tagalong</div>
+  <p class="tagline">Free eats and free fun for the kids.</p>
+  <p class="byline"><span class="hrt">♥</span> Kept current by parents like you</p>
 </header>
 
 <div class="rail-wrap">
   <div class="rail" id="rail"></div>
   <div class="types">
-    <button class="chip allc on" data-type="all">Everything</button>
-    <button class="chip food" data-type="food">Eat free</button>
-    <button class="chip event" data-type="event">Events</button>
+    <button class="tab on" data-type="all">Everything</button>
+    <button class="tab" data-type="food">Eats</button>
+    <button class="tab" data-type="event">Events</button>
   </div>
 </div>
 
 <div class="count" id="count"></div>
 <main id="list"></main>
 
-<button class="fab" id="fab">＋ Suggest a spot</button>
+<button class="fab" id="fab"><span class="plus">＋</span> Suggest a spot</button>
+<div class="toast" id="toast"></div>
 
 <div class="scrim" id="scrim"></div>
 <div class="sheet" id="sheet">
   <div class="grip"></div>
   <h2>Suggest a spot</h2>
-  <p class="sub">Send it to us for a quick review. Nothing posts automatically. Only share what you can vouch for.</p>
+  <p class="sub">Found a good one? Send it our way and we'll check it, then share it with other local parents. Only pass along what you'd tell a friend.</p>
 
   <label>What kind?</label>
   <div class="seg" id="seg">
     <button data-t="food" class="on food">Kids eat free</button>
-    <button data-t="event">Free event</button>
+    <button data-t="event">Event</button>
   </div>
 
   <label>Place name</label>
@@ -170,12 +203,9 @@
       <label>Day</label>
       <select id="f-day">
         <option value="varies">Day varies</option>
-        <option value="1">Monday</option>
-        <option value="2">Tuesday</option>
-        <option value="3">Wednesday</option>
-        <option value="4">Thursday</option>
-        <option value="5">Friday</option>
-        <option value="6">Saturday</option>
+        <option value="1">Monday</option><option value="2">Tuesday</option>
+        <option value="3">Wednesday</option><option value="4">Thursday</option>
+        <option value="5">Friday</option><option value="6">Saturday</option>
         <option value="0">Sunday</option>
       </select>
     </div>
@@ -199,232 +229,236 @@
 </div>
 
 <footer>
-  Community-kept. Deals change, so tap <b>Verify</b> when you confirm one in person.<br/>
-  Added by parents, not by the restaurants. Double-check before you drive over.
+  Community-kept, so deals change. Tap <b>Verify</b> when you confirm one in person.<br/>
+  Reported by parents, not the restaurants. Double-check before you head over.
 </footer>
 
 <script>
-const NY_TZ = "America/New_York";
-const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const NY_TZ="America/New_York";
+const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const DAYFULL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-// Real Nassau-area data, extracted by the AI parser from verified parenting
-// sources (Mommy Poppins, LongIsland.com, I Love NY). Used as the fallback
-// when deals.json isn't reachable (e.g. opening this file standalone).
-const SEED = [
-  {id:"moes-0", type:"food", name:"Moe's Southwest Grill", deal:"Kids eat free with an adult meal, all day",
-   day:0, start:"", end:"", loc:"Nassau County locations", note:"Most Nassau/Suffolk Moe's. Dine-in.", src:"mommypoppins.com", conf:true},
-  {id:"abb-0", type:"food", name:"American Beauty Bistro", deal:"Kids free with an adult entree, 4–9pm",
-   day:0, start:"16:00", end:"21:00", loc:"Bellmore", note:"Excludes drinks.", src:"longisland.com", conf:true},
-  {id:"tap-2", type:"food", name:"Tap Room", deal:"Kids 12 & under free with a $15+ food item, all day",
-   day:2, start:"", end:"", loc:"Garden City (9 LI locations)", note:"Limit two kids per table.", src:"iloveny.com", conf:true},
-  {id:"millers-2", type:"food", name:"Miller's Ale House", deal:"Kids eat free with a $10 purchase",
-   day:2, start:"", end:"", loc:"Levittown", note:"Limit two kids per adult.", src:"mommypoppins.com", conf:true},
-  {id:"ymh-2", type:"food", name:"Your Mother's House Kitchen & Bar", deal:"Kids under 10 free with an adult entree",
-   day:2, start:"", end:"", loc:"Long Island", note:"Grilled cheese, corn dogs, mac & cheese, tenders.", src:"longisland.com", conf:true},
-  {id:"smash-3", type:"food", name:"Smashburger", deal:"Kids 12 & under free with an adult meal, all day",
-   day:3, start:"", end:"", loc:"Nassau County locations", note:"Dine-in. Call to confirm your location participates.", src:"mommypoppins.com", conf:false},
-  {id:"rath-v", type:"event", name:"Rath Park", deal:"Playground, wading pool & sports fields",
-   day:"varies", start:"", end:"", loc:"849 Fenworth Blvd, Franklin Square",
-   note:"Town of Hempstead park. Wading pool & programs seasonal. District residency may apply.", src:"hempsteadny.gov", conf:true},
+const SEED=[
+  {id:"moes-0",type:"food",name:"Moe's Southwest Grill",deal:"Kids eat free with an adult meal, all day",day:0,start:"",end:"",loc:"Nassau County locations",note:"Most Nassau/Suffolk Moe's. Dine-in.",src:"mommypoppins.com",conf:true},
+  {id:"abb-0",type:"food",name:"American Beauty Bistro",deal:"Kids free with an adult entree, 4–9pm",day:0,start:"16:00",end:"21:00",loc:"Bellmore",note:"Excludes drinks.",src:"longisland.com",conf:true},
+  {id:"tap-2",type:"food",name:"Tap Room",deal:"Kids 12 & under free with a $15+ food item, all day",day:2,start:"",end:"",loc:"Garden City (9 LI locations)",note:"Limit two kids per table.",src:"iloveny.com",conf:true},
+  {id:"millers-2",type:"food",name:"Miller's Ale House",deal:"Kids eat free with a $10 purchase",day:2,start:"",end:"",loc:"Levittown",note:"Limit two kids per adult.",src:"mommypoppins.com",conf:true},
+  {id:"ikea-3",type:"food",name:"IKEA Restaurant",deal:"Kids eat free Wednesdays: 2 kids' meals with an adult entree",day:3,start:"",end:"",loc:"Broadway Mall, Hicksville",url:"https://www.ikea.com/us/en/offers/family-offers/",note:"Requires a free IKEA Family membership. Ages 12 & under.",src:"ikea.com",conf:true},
+  {id:"ymh-2",type:"food",name:"Your Mother's House Kitchen & Bar",deal:"Kids under 10 free with an adult entree",day:2,start:"",end:"",loc:"Long Island",note:"Grilled cheese, corn dogs, mac & cheese, tenders.",src:"longisland.com",conf:true},
+  {id:"rath-v",type:"event",name:"Rath Park",deal:"Playground, wading pool & sports fields",day:"varies",start:"",end:"",loc:"849 Fenworth Blvd, Franklin Square",note:"Town of Hempstead park. Seasonal wading pool. District residency may apply.",src:"hempsteadny.gov",conf:true},
+  {id:"kbf-v",type:"event",name:"Kids Bowl Free",deal:"2 free bowling games every day, all summer",day:"varies",start:"",end:"",loc:"Register for your local center (zip 11010)",url:"https://www.kidsbowlfree.com/",note:"Sign up once at kidsbowlfree.com. Most centers Mon–Sat, ~May to Sept.",src:"kidsbowlfree.com",conf:true},
 ];
 
-let entries = [];              // seed + community
-let selDay = "all";            // "all" or 0-6
-let selType = "all";
-let formType = "food";
+function isoOf(d){ const p=n=>String(n).padStart(2,"0"); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`; }
+let entries=[], selDate="all", selType="all", formType="food";
 
-// ---------- storage (shared = every user sees it) ----------
-async function loadCommunity(){
-  const out = [];
-  try{
-    const res = await window.storage.list("spot:", true);
-    if(res && res.keys){
-      for(const k of res.keys){
-        try{ const r = await window.storage.get(k, true); if(r) out.push(JSON.parse(r.value)); }catch(e){}
-      }
-    }
-  }catch(e){ /* storage unavailable (e.g. off-platform) — seed still shows */ }
-  return out;
-}
-async function saveCommunity(entry){
-  try{ await window.storage.set("spot:"+entry.id, JSON.stringify(entry), true); return true; }
-  catch(e){ return false; }
-}
+async function loadFile(name){ try{ const r=await fetch(name,{cache:"no-store"}); if(r.ok){ const j=await r.json(); return (j.deals||[]); } }catch(e){} return []; }
 
-// ---------- rendering ----------
+function updateHero(){ /* tagline is static now */ }
+
 function buildRail(){
-  const rail = document.getElementById("rail");
-  const today = new Date();
-  let html = `<div class="day all ${selDay==='all'?'on':''}" data-day="all">Any day</div>`;
-  for(let i=0;i<7;i++){
-    const d = new Date(today); d.setDate(today.getDate()+i);
-    const idx = d.getDay();
-    html += `<div class="day ${selDay===idx?'on':''}" data-day="${idx}">
-      <div class="d">${DAYS[idx]}</div><div class="n">${d.getDate()}</div></div>`;
-  }
-  rail.innerHTML = html;
-  rail.querySelectorAll(".day").forEach(el=>{
-    el.onclick=()=>{ const v=el.dataset.day; selDay = v==="all"?"all":parseInt(v); buildRail(); render(); };
-  });
+  const rail=document.getElementById("rail"); const today=new Date(); today.setHours(0,0,0,0);
+  let html=`<div class="day all ${selDate==='all'?'on':''}" data-date="all">Any day</div>`;
+  for(let i=0;i<14;i++){ const d=new Date(today); d.setDate(today.getDate()+i); const ds=isoOf(d);
+    html+=`<div class="day ${i===0?'today':''} ${selDate===ds?'on':''}" data-date="${ds}"><div class="d">${DAYS[d.getDay()]}</div><div class="n">${d.getDate()}</div></div>`; }
+  rail.innerHTML=html;
+  rail.querySelectorAll(".day").forEach(el=>{ el.onclick=()=>{ selDate=el.dataset.date; buildRail(); updateHero(); render(); }; });
 }
 
 function matches(e){
-  if(selType!=="all" && e.type!==selType) return false;
-  if(selDay!=="all"){
-    if(e.day==="varies") return true;       // day-varies always surfaces
-    if(parseInt(e.day)!==selDay) return false;
+  if(selType!=="all"&&e.type!==selType)return false;
+  const t=new Date(); t.setHours(0,0,0,0);
+  if(e.date){
+    const ed=new Date(e.date+"T00:00:00");
+    if(ed<t) return false;                                    // past — hide
+    if(ed>new Date(t.getTime()+14*864e5)) return false;       // within 2 weeks
+    if(selDate!=="all" && e.date!==selDate) return false;     // exact date match
+  }else{
+    if(selDate!=="all"){
+      if(e.day==="varies") return true;                       // varies shows every day
+      const wd=new Date(selDate+"T00:00:00").getDay();
+      if(parseInt(e.day)!==wd) return false;                  // recurring weekday match
+    }
   }
   return true;
 }
-
-function fmtTime(t){
-  if(!t) return "";
-  let [h,m]=t.split(":").map(Number); const ap=h>=12?"pm":"am"; h=h%12||12;
-  return m?`${h}:${String(m).padStart(2,"0")}${ap}`:`${h}${ap}`;
-}
+function fmtTime(t){ if(!t)return""; let [h,m]=t.split(":").map(Number); const ap=h>=12?"pm":"am"; h=h%12||12; return m?`${h}:${String(m).padStart(2,"0")}${ap}`:`${h}${ap}`; }
 function whenLabel(e){
-  const day = e.day==="varies" ? "Day varies" : DAYS[parseInt(e.day)]+"s";
-  const time = e.start ? fmtTime(e.start)+(e.end?"–"+fmtTime(e.end):"") : "";
-  return time ? `${day}, ${time}` : day;
-}
-
-function nextOccurrence(dayIdx, hhmm){
-  const now = new Date();
-  const [h,m] = (hhmm||"17:00").split(":").map(Number);
-  const d = new Date(now); d.setHours(h,m,0,0);
-  let delta = (dayIdx - now.getDay() + 7) % 7;
-  if(delta===0 && d < now) delta = 7;
-  d.setDate(now.getDate()+delta);
-  return d;
-}
-function gcalStamp(d){
-  const p=n=>String(n).padStart(2,"0");
-  return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(d.getHours())}${p(d.getMinutes())}00`;
-}
-function calUrl(e){
-  const idx = parseInt(e.day);
-  const start = nextOccurrence(idx, e.start||"17:00");
-  const end = nextOccurrence(idx, e.end||e.start||"18:00");
-  if(end<=start) end.setHours(start.getHours()+1);
-  const title = e.type==="food" ? `${e.name} — kids eat free` : `${e.name} — ${e.deal}`;
-  const details = [e.deal, e.note, "Added via Tagalong (parent-reported — confirm before you go)"].filter(Boolean).join("\n\n");
-  const p = new URLSearchParams({
-    action:"TEMPLATE", text:title,
-    dates:`${gcalStamp(start)}/${gcalStamp(end)}`,
-    location:e.loc||"Franklin Square, NY", details, ctz:NY_TZ,
-    recur:"RRULE:FREQ=WEEKLY"
-  });
-  return "https://calendar.google.com/calendar/render?"+p.toString();
-}
-
-function render(){
-  const list = document.getElementById("list");
-  const shown = entries.filter(matches);
-  const c = document.getElementById("count");
-  c.textContent = shown.length ? `${shown.length} spot${shown.length>1?"s":""}${selDay==="all"?"":" for "+DAYS[selDay]}` : "";
-
-  if(!shown.length){
-    list.innerHTML = `<div class="empty"><div class="big">Nothing here yet</div>
-      Be the first to add a ${selType==="food"?"kids-eat-free spot":"free event"} for this day.</div>`;
-    return;
+  if(e.date){
+    const d=new Date(e.date+"T00:00:00");
+    const ds=d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"});
+    const time=e.start?fmtTime(e.start)+(e.end?"–"+fmtTime(e.end):""):"";
+    return {day:ds,time};
   }
-  list.innerHTML = shown.map(e=>{
-    const canCal = e.day!=="varies";
-    return `<div class="card ${e.type}">
-      <div class="top">
-        <h3 class="name">${esc(e.name)}</h3>
-        <span class="badge ${e.type}">${e.type==="food"?"Eat free":"Event"}</span>
-      </div>
-      <p class="deal ${e.conf?'':'warn'}">${esc(e.deal)}</p>
-      <div class="meta"><span><b>${whenLabel(e)}</b></span>${e.loc?`<span>${esc(e.loc)}</span>`:""}</div>
-      ${e.note?`<p class="note">${esc(e.note)}</p>`:""}
-      <div class="src">${e.conf?"✓ "+esc(e.src||"Community"):`<span class="unconf">Unconfirmed</span> ${esc(e.src||"Community")}`}</div>
-      <div class="actions">
-        ${e.url
-          ? `<a class="btn cal" href="${esc(e.url)}" target="_blank" rel="noopener">Register ↗</a>`
-          : `<button class="btn cal" ${canCal?"":"disabled"} onclick="addCal('${e.id}')">
-              ${canCal?"＋ Add to Calendar":"Set a day first"}</button>`}
-        ${e.conf?"":`<button class="btn ver" onclick="verify('${e.id}')">Verify</button>`}
-      </div>
-    </div>`;
-  }).join("");
+  const day=e.day==="varies"?"Day varies":DAYFULL[parseInt(e.day)]+"s";
+  const time=e.start?fmtTime(e.start)+(e.end?"–"+fmtTime(e.end):""):"";
+  return {day,time};
+}
+function nextOccurrence(dayIdx,hhmm){ const now=new Date(); const [h,m]=(hhmm||"17:00").split(":").map(Number); const d=new Date(now); d.setHours(h,m,0,0); let delta=(dayIdx-now.getDay()+7)%7; if(delta===0&&d<now)delta=7; d.setDate(now.getDate()+delta); return d; }
+function icsEsc(s){ return (s||"").replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n"); }
+function icsStamp(d){ const p=n=>String(n).padStart(2,"0"); return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(d.getHours())}${p(d.getMinutes())}00`; }
+function buildIcs(e){
+  let start,end,recurring=true;
+  if(e.date){
+    recurring=false;
+    start=new Date(e.date+"T"+((e.start||"10:00"))+":00");
+    end=new Date(e.date+"T"+((e.end||e.start||"11:00"))+":00");
+    if(end<=start) end=new Date(start.getTime()+3600000);
+  }else{
+    const idx=parseInt(e.day);
+    start=nextOccurrence(idx,e.start||"17:00");
+    end=nextOccurrence(idx,e.end||e.start||"18:00");
+    if(end<=start) end.setHours(start.getHours()+1);
+  }
+  const title=e.type==="food"?`${e.name} — kids eat free`:e.name;
+  const desc=[e.deal,e.note,"Added via Tagalong (confirm before you go)"].filter(Boolean).map(icsEsc).join("\\n\\n");
+  const now=new Date(); const p=n=>String(n).padStart(2,"0");
+  const stamp=`${now.getUTCFullYear()}${p(now.getUTCMonth()+1)}${p(now.getUTCDate())}T${p(now.getUTCHours())}${p(now.getUTCMinutes())}${p(now.getUTCSeconds())}Z`;
+  const uid=(e.id||"ev")+"-"+Date.now()+"@tagalong";
+  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Tagalong//Franklin Square//EN","CALSCALE:GREGORIAN",
+    "BEGIN:VEVENT","UID:"+uid,"DTSTAMP:"+stamp,"DTSTART:"+icsStamp(start),"DTEND:"+icsStamp(end)];
+  if(recurring) lines.push("RRULE:FREQ=WEEKLY");
+  lines.push("SUMMARY:"+icsEsc(title),"LOCATION:"+icsEsc(e.loc||"Franklin Square, NY"),"DESCRIPTION:"+desc,"END:VEVENT","END:VCALENDAR");
+  return lines.join("\r\n");
 }
 function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
-window.addCal = id=>{ const e=entries.find(x=>x.id===id); if(e) window.open(calUrl(e),"_blank"); };
-window.verify = async id=>{
+function cardHtml(e,i){
+  const w=whenLabel(e);
+  let primary, secondary="";
+  if(e.date){
+    primary=`<button class="btn cal" onclick="addCal('${e.id}')">＋ Add to Calendar</button>`;
+    if(e.url) secondary=`<a class="btn ver" href="${esc(e.url)}" target="_blank" rel="noopener">Details ↗</a>`;
+  }else if(e.url){
+    primary=`<a class="btn cal" href="${esc(e.url)}" target="_blank" rel="noopener" onclick="confetti()">Register ↗</a>`;
+  }else{
+    if(e.day==="varies"){
+      primary=`<span class="btn cal soft">Drop in anytime</span>`;
+    }else{
+      primary=`<button class="btn cal" onclick="addCal('${e.id}')">＋ Add to Calendar</button>`;
+    }
+  }
+  const verifyBtn=e.conf?"":`<button class="btn ver" onclick="verify('${e.id}')">Verify</button>`;
+  return `<div class="card ${e.type}" style="animation-delay:${Math.min(i*40,280)}ms">
+    <span class="catpill">${e.type==="food"?"Eat free":"Event"}</span>
+    <h3 class="name">${esc(e.name)}</h3>
+    <div class="deal ${e.conf?'':'warn'}">${esc(e.deal)}</div>
+    <div class="rule"></div>
+    <div class="meta"><span class="when">${w.day}</span>${w.time?`<span class="sep">/</span><span>${w.time}</span>`:""}${e.loc?`<span class="sep">/</span><span>${esc(e.loc)}</span>`:""}</div>
+    ${e.note?`<p class="note">${esc(e.note)}</p>`:""}
+    <div class="src">${e.conf?"✓ "+esc(e.src||"Community"):`<span class="unconf">Unconfirmed</span> · ${esc(e.src||"Community")}`}</div>
+    <div class="actions">${primary}${secondary}${verifyBtn}</div>
+  </div>`;
+}
+
+function dateHeader(ds){
+  const d=new Date(ds+"T00:00:00"); const t=new Date(); t.setHours(0,0,0,0);
+  const diff=Math.round((d-t)/864e5);
+  if(diff===0) return "Today";
+  if(diff===1) return "Tomorrow";
+  return d.toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"});
+}
+
+function renderGrouped(pool){
+  const dated=pool.filter(e=>e.date).sort((a,b)=> a.date<b.date?-1 : a.date>b.date?1 : (a.start||"").localeCompare(b.start||""));
+  const weekly=pool.filter(e=>!e.date && e.day!=="varies").sort((a,b)=>parseInt(a.day)-parseInt(b.day));
+  const anytime=pool.filter(e=>!e.date && e.day==="varies");
+  let html="", i=0, cur=null;
+  for(const e of dated){ if(e.date!==cur){ cur=e.date; html+=`<div class="ghead">${dateHeader(e.date)}</div>`; } html+=cardHtml(e,i++); }
+  if(weekly.length){ html+=`<div class="ghead">Every week</div>`; for(const e of weekly) html+=cardHtml(e,i++); }
+  if(anytime.length){ html+=`<div class="ghead">Anytime</div>`; for(const e of anytime) html+=cardHtml(e,i++); }
+  return html;
+}
+
+function render(){
+  const list=document.getElementById("list"); const pool=entries.filter(matches);
+  const c=document.getElementById("count");
+  if(!pool.length){
+    c.textContent="";
+    list.innerHTML=`<div class="empty"><div class="big">Nothing here yet</div>Be the first to suggest a ${selType==="food"?"kids-eat-free spot":"free event"} for this day.</div>`;
+    return;
+  }
+  if(selDate==="all"){
+    c.textContent="Coming up";
+    list.innerHTML=renderGrouped(pool);
+  }else{
+    c.textContent=`${pool.length} spot${pool.length>1?"s":""}`;
+    list.innerHTML=pool.map((e,i)=>cardHtml(e,i)).join("");
+  }
+}
+
+let toastT; function toast(msg){ const t=document.getElementById("toast"); t.innerHTML=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2200); }
+
+// ---------- confetti ----------
+const _cf=document.createElement("canvas");
+_cf.style.cssText="position:fixed;inset:0;pointer-events:none;z-index:90;";
+document.body.appendChild(_cf);
+const _cx=_cf.getContext("2d");
+function _cfSize(){ _cf.width=innerWidth; _cf.height=innerHeight; }
+_cfSize(); addEventListener("resize",_cfSize);
+let _parts=[], _raf=null;
+const _CFC=["#c79138","#2fa268","#2b9ba0","#132433","#f0c86b","#faf6ec"];
+function confetti(){
+  for(let i=0;i<95;i++){
+    _parts.push({x:innerWidth/2+(Math.random()-.5)*140,y:innerHeight*.34,
+      vx:(Math.random()-.5)*10,vy:Math.random()*-10-4,g:.28+Math.random()*.12,
+      s:6+Math.random()*7,rot:Math.random()*6.28,vr:(Math.random()-.5)*.45,
+      c:_CFC[(Math.random()*_CFC.length)|0],life:0,max:70+Math.random()*45});
+  }
+  if(!_raf) _raf=requestAnimationFrame(_tick);
+}
+function _tick(){
+  _cx.clearRect(0,0,_cf.width,_cf.height);
+  _parts=_parts.filter(p=>p.life<p.max);
+  for(const p of _parts){
+    p.life++; p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
+    _cx.save(); _cx.globalAlpha=Math.max(0,1-p.life/p.max);
+    _cx.translate(p.x,p.y); _cx.rotate(p.rot); _cx.fillStyle=p.c;
+    _cx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6); _cx.restore();
+  }
+  if(_parts.length) _raf=requestAnimationFrame(_tick); else { _raf=null; _cx.clearRect(0,0,_cf.width,_cf.height); }
+}
+window.confetti=confetti;
+window.addCal=id=>{
   const e=entries.find(x=>x.id===id); if(!e) return;
-  e.conf=true; e.deal=e.deal.replace(/\s*\(unconfirmed\)/i,""); e.src="Verified by a parent";
-  if(!e.id.startsWith("seed-")) await saveCommunity(e);
-  render();
+  try{ confetti(); }catch(_){}
+  try{
+    const ics=buildIcs(e);
+    const uri="data:text/calendar;charset=utf-8,"+encodeURIComponent(ics);
+    const a=document.createElement("a");
+    a.href=uri;
+    a.download=(e.name||"event").replace(/[^a-z0-9]+/gi,"-").toLowerCase().replace(/^-|-$/g,"")+".ics";
+    document.body.appendChild(a); a.click(); a.remove();
+    toast('<span class="g">✦</span> Saved — go have fun');
+  }catch(err){
+    try{ window.location.href="data:text/calendar;charset=utf-8,"+encodeURIComponent(buildIcs(e)); }catch(_){}
+  }
 };
+window.verify=id=>{ const e=entries.find(x=>x.id===id); if(!e)return; e.conf=true; e.deal=e.deal.replace(/\s*\(unconfirmed\)/i,""); e.src="Verified by a parent"; render(); toast("Thanks for looking out for other parents"); };
 
-// ---------- type chips ----------
-document.querySelectorAll(".chip").forEach(ch=>{
-  ch.onclick=()=>{
-    document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
-    ch.classList.add("on"); selType=ch.dataset.type; render();
-  };
-});
+document.querySelectorAll(".tab").forEach(ch=>{ ch.onclick=()=>{ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on")); ch.classList.add("on"); selType=ch.dataset.type; render(); }; });
 
-// ---------- add sheet ----------
 const scrim=document.getElementById("scrim"), sheet=document.getElementById("sheet");
 function openSheet(){scrim.classList.add("open");sheet.classList.add("open");}
 function closeSheet(){scrim.classList.remove("open");sheet.classList.remove("open");}
-document.getElementById("fab").onclick=openSheet;
-document.getElementById("cancel").onclick=closeSheet;
-scrim.onclick=closeSheet;
-document.querySelectorAll("#seg button").forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll("#seg button").forEach(x=>x.classList.remove("on","food","event"));
-    formType=b.dataset.t; b.classList.add("on",formType);
-    document.getElementById("lbl-deal").textContent = formType==="food"?"What's free?":"What's happening?";
-  };
-});
+document.getElementById("fab").onclick=openSheet; document.getElementById("cancel").onclick=closeSheet; scrim.onclick=closeSheet;
+document.querySelectorAll("#seg button").forEach(b=>{ b.onclick=()=>{ document.querySelectorAll("#seg button").forEach(x=>x.classList.remove("on","food","event")); formType=b.dataset.t; b.classList.add("on",formType); document.getElementById("lbl-deal").textContent=formType==="food"?"What's free?":"What's happening?"; }; });
 
-document.getElementById("save").onclick=async ()=>{
-  const name=document.getElementById("f-name").value.trim();
-  const deal=document.getElementById("f-deal").value.trim();
+document.getElementById("save").onclick=()=>{
+  const name=document.getElementById("f-name").value.trim(); const deal=document.getElementById("f-deal").value.trim();
   if(!name||!deal){ alert("Add a place name and what's free."); return; }
-  const dayName = document.getElementById("f-day").selectedOptions[0].text;
-  const body =
-`New Tagalong suggestion:
-
-Type: ${formType==="food"?"Kids eat free":"Free event"}
-Place: ${name}
-What's free: ${deal}
-Day: ${dayName}
-Time: ${document.getElementById("f-start").value} to ${document.getElementById("f-end").value}
-Where: ${document.getElementById("f-loc").value.trim()}
-Notes: ${document.getElementById("f-note").value.trim()}
-
-(Sent from Tagalong. Reviewed before it goes live.)`;
-  // Suggestions go to you for review — nothing posts to the app automatically.
-  const to = "ly.santos@gmail.com";
-  window.location.href = "mailto:"+to+"?subject="+encodeURIComponent("Tagalong suggestion: "+name)+"&body="+encodeURIComponent(body);
-  closeSheet();
-  ["f-name","f-deal","f-loc","f-note"].forEach(i=>document.getElementById(i).value="");
+  const dayName=document.getElementById("f-day").selectedOptions[0].text;
+  const body=`New Tagalong suggestion:\n\nType: ${formType==="food"?"Kids eat free":"Free event"}\nPlace: ${name}\nWhat's free: ${deal}\nDay: ${dayName}\nTime: ${document.getElementById("f-start").value} to ${document.getElementById("f-end").value}\nWhere: ${document.getElementById("f-loc").value.trim()}\nNotes: ${document.getElementById("f-note").value.trim()}\n\n(Sent from Tagalong. Reviewed before it goes live.)`;
+  const to="SET_YOUR_EMAIL_HERE";
+  window.location.href="mailto:"+to+"?subject="+encodeURIComponent("Tagalong suggestion: "+name)+"&body="+encodeURIComponent(body);
+  closeSheet(); confetti(); ["f-name","f-deal","f-loc","f-note"].forEach(i=>document.getElementById(i).value=""); toast("Thanks — sending your suggestion");
 };
 
-// ---------- boot ----------
-async function loadFile(name){
-  try{ const r = await fetch(name, {cache:"no-store"}); if(r.ok){ const j = await r.json(); return (j.deals||[]); } }
-  catch(e){}
-  return [];
-}
 (async ()=>{
-  buildRail();
-  // Curated (your approved list, admin-managed) wins over auto-scraped.
-  const curated = await loadFile("deals.json");
-  const scraped = await loadFile("scraped.json");
-  const base = (curated.length ? curated : SEED);
-  const seen = new Set();
-  entries = [];
-  for(const e of [...base, ...scraped]){
-    if(!e || !e.name) continue;
-    const k = (e.name||"").toLowerCase()+"|"+e.day+"|"+e.type;
-    if(seen.has(k)) continue; seen.add(k); entries.push(e);
-  }
+  buildRail(); updateHero();
+  const curated=await loadFile("deals.json"); const scraped=await loadFile("scraped.json");
+  const base=(curated.length?curated:SEED); const seen=new Set(); entries=[];
+  for(const e of [...base,...scraped]){ if(!e||!e.name)continue; const k=(e.name||"").toLowerCase()+"|"+e.day+"|"+(e.date||"")+"|"+e.type; if(seen.has(k))continue; seen.add(k); entries.push(e); }
   render();
 })();
 </script>

@@ -37,6 +37,12 @@ const TARGET_AREA =
   "Uniondale, Westbury (all in Nassau County, NY). Reject anything clearly far " +
   "(Suffolk County, the Hamptons, NYC boroughs, upstate).";
 
+// Franklin Square Public Library — structured iCal feed of programs (one calendar,
+// cid=20873, all audiences). We keep KIDS events only (parser filter below;
+// their "Kids" audience id is 9128). If nothing appears, open their calendar,
+// click "iCal", and paste the real subscribe link here.
+const LIBRARY_ICAL = "https://franklinsquarepl.libcal.com/ical_subscribe.php?cid=20873";
+
 // Curated sources. These are content pages that already verify deals — not
 // bot-walled restaurant sites. Add or drop URLs here; that's the only upkeep.
 const SOURCES = [
@@ -159,6 +165,65 @@ function normalize(list, sourceUrl) {
 }
 
 // ---------------------------------------------------------------------------
+// Library iCal: read the structured feed, keep upcoming KIDS/family programs.
+// ---------------------------------------------------------------------------
+function icalUnescape(s){ return (s||"").replace(/\\n/gi,"\n").replace(/\\,/g,",").replace(/\\;/g,";").replace(/\\\\/g,"\\").trim(); }
+function icalProp(block, name){
+  const re = new RegExp("^"+name+"(;[^:\\n]*)?:(.*)$","mi");
+  const m = block.match(re); return m ? m[2].trim() : "";
+}
+function icalDate(val){
+  // Handles 20260708T100000, 20260708T140000Z, or 20260708 (all-day)
+  const m = (val||"").match(/(\d{4})(\d{2})(\d{2})(?:T(\d{2})(\d{2}))?/);
+  if(!m) return null;
+  return { y:+m[1], mo:+m[2], d:+m[3], h:m[4]?+m[4]:null, mi:m[5]?+m[5]:0 };
+}
+const KID_WORDS = ["story","storytime","kids","child","children","toddler","baby","infant","preschool","pre-k","pre k","craft","lego","sing","puppet","summer reading","read to","music and movement","stem","nursery","chess club","rising grades","grades k","grade k","grades 1","grades 2","grades 3","grades 4","grades 5","grades 6","ages 0","ages 1","ages 2","ages 3","ages 4","ages 5","ages 6","ages 7","ages 8","ages 9","ages 10","ages 11","ages 12"];
+
+async function getLibraryEvents(){
+  try{
+    const res = await fetch(LIBRARY_ICAL, { headers:{ "User-Agent":"Mozilla/5.0 (Tagalong/1.0)" }});
+    if(!res.ok) throw new Error("ical "+res.status);
+    let txt = await res.text();
+    txt = txt.replace(/\r?\n[ \t]/g, ""); // unfold folded lines
+    const blocks = txt.split("BEGIN:VEVENT").slice(1).map(b=>b.split("END:VEVENT")[0]);
+    const now = new Date(); const horizon = new Date(Date.now()+21*864e5);
+    const out = [];
+    for(const b of blocks){
+      const summary = icalUnescape(icalProp(b,"SUMMARY"));
+      if(!summary) continue;
+      const desc = icalUnescape(icalProp(b,"DESCRIPTION"));
+      const hay = (summary+" "+desc).toLowerCase();
+      if(!KID_WORDS.some(w=>hay.includes(w))) continue;      // keep kids programs only
+      if(/\bteens?\b|adults? only|senior|55\+|18\+|21\+/i.test(hay)) continue; // drop teen/adult
+      const s = icalDate(icalProp(b,"DTSTART")); const e = icalDate(icalProp(b,"DTEND"));
+      if(!s || s.h===null) continue;                          // need a real start time
+      const start = new Date(s.y, s.mo-1, s.d, s.h, s.mi);
+      if(start < now || start > horizon) continue;            // upcoming, next 3 weeks
+      const pad=n=>String(n).padStart(2,"0");
+      const date = `${s.y}-${pad(s.mo)}-${pad(s.d)}`;
+      const startHM = `${pad(s.h)}:${pad(s.mi)}`;
+      const endHM = (e && e.h!==null) ? `${pad(e.h)}:${pad(e.mi)}` : "";
+      const url = icalProp(b,"URL") || "https://franklinsquarepl.libcal.com/calendar";
+      const shortDesc = desc.split("\n")[0].slice(0,150).trim();
+      out.push({
+        id: "lib-"+date+"-"+summary.toLowerCase().replace(/[^a-z0-9]+/g,"-").slice(0,28),
+        type:"event", name:summary, deal:"Free kids program at the library",
+        day: start.getDay(), date, start:startHM, end:endHM,
+        loc:"Franklin Square Public Library, 19 Lincoln Rd",
+        note:(shortDesc?shortDesc+" ":"")+"Free to attend; some programs ask you to register.",
+        url, conf:true, src:"fslibrary.org", lastChecked:new Date().toISOString().slice(0,10)
+      });
+    }
+    console.log(`Library: kept ${out.length} upcoming kids events`);
+    return out;
+  }catch(err){
+    console.warn("Library feed failed (skipped):", err.message);
+    return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 async function main() {
@@ -185,7 +250,16 @@ async function main() {
     }
   }
 
-  const deals = [...merged.values()].sort((a, b) => {
+  const scraped = [...merged.values()];
+  const library = await getLibraryEvents();
+
+  // Combine restaurant scrape + library events, dedupe (date-aware), sort.
+  const seen = new Set(); const combined = [];
+  for (const d of [...scraped, ...library]) {
+    const k = (d.name||"").toLowerCase()+"|"+d.day+"|"+(d.date||"")+"|"+d.type;
+    if (seen.has(k)) continue; seen.add(k); combined.push(d);
+  }
+  const deals = combined.sort((a, b) => {
     const av = a.day === "varies" ? 9 : a.day;
     const bv = b.day === "varies" ? 9 : b.day;
     return av - bv;
