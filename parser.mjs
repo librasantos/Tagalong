@@ -31,6 +31,8 @@ const BLOCKLIST = [
   // Duplicate of the curated "American Beauty Bistro" entry — keep the scraped
   // "American Beauty" listing out so it doesn't show twice.
   "american beauty",
+  // Duplicate of the curated "Your Mother's House Kitchen & Bar" entry.
+  "your mother's house",
 ];
 
 // Franklin Square is central-west Nassau. Keep deals in/near these towns.
