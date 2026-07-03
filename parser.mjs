@@ -32,7 +32,9 @@ const BLOCKLIST = [
   // "American Beauty" listing out so it doesn't show twice.
   "american beauty",
   // Duplicate of the curated "Your Mother's House Kitchen & Bar" entry.
+  // Cover both spellings (with and without the apostrophe).
   "your mother's house",
+  "your mothers house",
 ];
 
 // Franklin Square is central-west Nassau. Keep deals in/near these towns.
