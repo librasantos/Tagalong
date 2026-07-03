@@ -48,29 +48,6 @@ const SOURCES = [
   { url: "https://mommypoppins.com/long-island-kids", type: "events" },
 ];
 
-// PINNED: hand-verified local spots that ALWAYS appear, no matter what the
-// weekly scrape returns. This is your safety net — add a deal here once you've
-// confirmed it in person and it will never get dropped by a refresh.
-const PINNED = [
-  { type:"food", name:"Moe's Southwest Grill", deal:"Kids eat free with an adult meal, all day",
-    day:0, start:"", end:"", loc:"Nassau County locations", note:"Most Nassau/Suffolk Moe's. Dine-in.", conf:true },
-  { type:"food", name:"Tap Room", deal:"Kids 12 & under free with a $15+ food item, all day",
-    day:2, start:"", end:"", loc:"Garden City (9 LI locations)", note:"Limit two kids per table.", conf:true },
-  { type:"food", name:"Miller's Ale House", deal:"Kids eat free with a $10 purchase",
-    day:2, start:"", end:"", loc:"Levittown", note:"Limit two kids per adult.", conf:true },
-  { type:"food", name:"IKEA Restaurant", deal:"Kids eat free Wednesdays: 2 kids' meals with an adult entrée",
-    day:3, start:"", end:"", loc:"Broadway Mall, Hicksville",
-    url:"https://www.ikea.com/us/en/offers/family-offers/",
-    note:"Requires a free IKEA Family membership. Ages 12 & under. In the in-store Swedish Restaurant.", conf:true },
-  { type:"event", name:"Rath Park", deal:"Playground, wading pool & sports fields",
-    day:"varies", start:"", end:"", loc:"849 Fenworth Blvd, Franklin Square",
-    note:"Town of Hempstead park. Seasonal wading pool. District residency may apply.", conf:true },
-  { type:"event", name:"Kids Bowl Free", deal:"2 free bowling games every day, all summer",
-    day:"varies", start:"", end:"", loc:"Register for your local center (zip 11010)",
-    url:"https://www.kidsbowlfree.com/",
-    note:"Sign up once at kidsbowlfree.com. Most centers Mon–Sat, ~May to Sept. Ages vary (often up to 15). Shoe rental not included.", conf:true },
-];
-
 // ---------------------------------------------------------------------------
 // 1. Fetch a page and reduce it to readable text (cheap HTML strip).
 // ---------------------------------------------------------------------------
@@ -188,13 +165,9 @@ async function main() {
   if (!API_KEY) throw new Error("Set ANTHROPIC_API_KEY first.");
   const merged = new Map();
 
-  // Pinned deals go in first and are protected from being overwritten.
-  for (const d of normalize(PINNED, "https://tagalong.local")) {
-    d.src = "verified locally";
-    merged.set(keyOf(d), d);
-  }
-  const pinnedKeys = new Set(merged.keys());
-
+  // Your curated/approved list lives in deals.json and is managed from the
+  // admin page. The parser NEVER touches it. It only writes scraped.json, so
+  // nothing you approved can be overwritten by a weekly refresh.
   for (const s of SOURCES) {
     try {
       console.log("Reading", s.url);
@@ -203,7 +176,6 @@ async function main() {
       for (const d of normalize(raw, s.url)) {
         if (!d.name || !d.deal) continue;
         if (BLOCKLIST.includes(d.name.toLowerCase().trim())) continue; // dropped on purpose
-        if (pinnedKeys.has(keyOf(d))) continue; // never override a pinned deal
         // First verified source wins; otherwise keep what we have.
         const existing = merged.get(keyOf(d));
         if (!existing || (d.conf && !existing.conf)) merged.set(keyOf(d), d);
@@ -220,10 +192,10 @@ async function main() {
   });
 
   await fs.writeFile(
-    "deals.json",
+    "scraped.json",
     JSON.stringify({ updated: new Date().toISOString(), deals }, null, 2)
   );
-  console.log(`Wrote ${deals.length} deals to deals.json`);
+  console.log(`Wrote ${deals.length} auto-found deals to scraped.json`);
 }
 
 main().catch((e) => {

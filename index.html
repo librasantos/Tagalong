@@ -145,13 +145,13 @@
 <div class="count" id="count"></div>
 <main id="list"></main>
 
-<button class="fab" id="fab">＋ Add a spot</button>
+<button class="fab" id="fab">＋ Suggest a spot</button>
 
 <div class="scrim" id="scrim"></div>
 <div class="sheet" id="sheet">
   <div class="grip"></div>
-  <h2>Add a spot</h2>
-  <p class="sub">You add it once. Every parent in Franklin Square sees it. Only share what you can vouch for.</p>
+  <h2>Suggest a spot</h2>
+  <p class="sub">Send it to us for a quick review. Nothing posts automatically. Only share what you can vouch for.</p>
 
   <label>What kind?</label>
   <div class="seg" id="seg">
@@ -194,7 +194,7 @@
   <label>Anything else?</label>
   <textarea id="f-note" placeholder="e.g. one free kid per paying adult, dine-in only"></textarea>
 
-  <button class="save" id="save">Post it</button>
+  <button class="save" id="save">Send suggestion</button>
   <button class="cancel" id="cancel">Cancel</button>
 </div>
 
@@ -386,37 +386,42 @@ document.getElementById("save").onclick=async ()=>{
   const name=document.getElementById("f-name").value.trim();
   const deal=document.getElementById("f-deal").value.trim();
   if(!name||!deal){ alert("Add a place name and what's free."); return; }
-  const entry={
-    id:"c"+Date.now().toString(36),
-    type:formType, name, deal,
-    day:document.getElementById("f-day").value,
-    start:document.getElementById("f-start").value,
-    end:document.getElementById("f-end").value,
-    loc:document.getElementById("f-loc").value.trim(),
-    note:document.getElementById("f-note").value.trim(),
-    src:"Added by a parent", conf:true
-  };
-  entries.unshift(entry);
-  const ok=await saveCommunity(entry);
+  const dayName = document.getElementById("f-day").selectedOptions[0].text;
+  const body =
+`New Tagalong suggestion:
+
+Type: ${formType==="food"?"Kids eat free":"Free event"}
+Place: ${name}
+What's free: ${deal}
+Day: ${dayName}
+Time: ${document.getElementById("f-start").value} to ${document.getElementById("f-end").value}
+Where: ${document.getElementById("f-loc").value.trim()}
+Notes: ${document.getElementById("f-note").value.trim()}
+
+(Sent from Tagalong. Reviewed before it goes live.)`;
+  // Suggestions go to you for review — nothing posts to the app automatically.
+  const to = "SET_YOUR_EMAIL_HERE";
+  window.location.href = "mailto:"+to+"?subject="+encodeURIComponent("Tagalong suggestion: "+name)+"&body="+encodeURIComponent(body);
   closeSheet();
   ["f-name","f-deal","f-loc","f-note"].forEach(i=>document.getElementById(i).value="");
-  render();
-  if(!ok) setTimeout(()=>alert("Saved for this session. (Shared saving isn't available in this preview — it'll persist once deployed with a backend.)"),200);
 };
 
 // ---------- boot ----------
+async function loadFile(name){
+  try{ const r = await fetch(name, {cache:"no-store"}); if(r.ok){ const j = await r.json(); return (j.deals||[]); } }
+  catch(e){}
+  return [];
+}
 (async ()=>{
   buildRail();
-  const community = await loadCommunity();
-  let base = SEED;
-  try{
-    const r = await fetch("deals.json", {cache:"no-store"});
-    if(r.ok){ const j = await r.json(); if(j.deals && j.deals.length) base = j.deals; }
-  }catch(e){ /* standalone / offline — use embedded real data */ }
-  // community submissions first, then parser data, de-duped by name+day
+  // Curated (your approved list, admin-managed) wins over auto-scraped.
+  const curated = await loadFile("deals.json");
+  const scraped = await loadFile("scraped.json");
+  const base = (curated.length ? curated : SEED);
   const seen = new Set();
   entries = [];
-  for(const e of [...community, ...base]){
+  for(const e of [...base, ...scraped]){
+    if(!e || !e.name) continue;
     const k = (e.name||"").toLowerCase()+"|"+e.day+"|"+e.type;
     if(seen.has(k)) continue; seen.add(k); entries.push(e);
   }

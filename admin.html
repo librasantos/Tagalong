@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Tagalong Admin</title>
+<style>
+  :root{ --ink:#15304a; --ink-soft:#4a6076; --paper:#f6f4ee; --card:#fff;
+    --sun:#f5a524; --grass:#2f9e6b; --coral:#ef6f5b; --line:#e4ded1; }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;}
+  body{padding:0 0 120px;}
+  header{padding:20px;position:sticky;top:0;background:linear-gradient(var(--paper) 82%,rgba(246,244,238,0));z-index:5;}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);}
+  h1{margin:2px 0 4px;font-size:26px;font-weight:800;letter-spacing:-.02em;}
+  .hint{font-size:13px;color:var(--ink-soft);line-height:1.4;max-width:44ch;}
+  .banner{margin:12px 20px 0;background:#fdf3df;border:1.5px solid #f0d79a;border-radius:12px;
+    padding:12px 14px;font-size:13px;color:#8a6516;line-height:1.45;}
+  main{padding:8px 16px;display:flex;flex-direction:column;gap:12px;}
+  .card{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:14px;position:relative;}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:16px 0 0 16px;}
+  .card.food::before{background:var(--coral);} .card.event::before{background:var(--grass);}
+  .row{display:flex;gap:8px;margin-top:8px;} .row>div{flex:1;}
+  label{display:block;font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 4px;}
+  input,select,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);
+    background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;}
+  textarea{min-height:44px;resize:vertical;}
+  .toprow{display:flex;justify-content:space-between;align-items:center;gap:8px;}
+  .badge{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;}
+  .badge.food{background:#fdeae6;color:#c34a37;} .badge.event{background:#e4f4ec;color:#1f7a50;}
+  .del{background:none;border:none;color:var(--coral);font-family:inherit;font-weight:800;font-size:13px;cursor:pointer;padding:4px 6px;}
+  .conf{display:flex;align-items:center;gap:7px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ink-soft);}
+  .conf input{width:auto;}
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--line);
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;z-index:10;}
+  .bar button{flex:1;border:none;border-radius:12px;padding:14px;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;}
+  .add{background:#fff;color:var(--ink);border:1.5px solid var(--line)!important;}
+  .save{background:var(--ink);color:#fff;}
+  .save:active,.add:active{transform:scale(.99);}
+  .count{padding:2px 20px 0;font-size:13px;color:var(--ink-soft);font-weight:700;}
+  #gate{position:fixed;inset:0;z-index:100;background:var(--ink);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center;}
+  #gate h2{margin:0;color:#fff;font-size:22px;font-weight:800;}
+  #gate p{margin:0;color:#b9c6d2;font-size:13px;}
+  #gate input{max-width:280px;text-align:center;font-size:18px;padding:13px;border-radius:12px;border:none;}
+  #gate button{background:var(--sun);color:#3a2600;border:none;border-radius:12px;padding:13px 28px;
+    font-family:inherit;font-weight:800;font-size:15px;cursor:pointer;}
+  #gate .err{color:#ffb4a8;font-size:13px;font-weight:700;min-height:16px;}
+</style>
+</head>
+<body>
+<div id="gate">
+  <h2>Tagalong Admin</h2>
+  <p>Enter your passcode to continue.</p>
+  <input id="gate-input" type="password" placeholder="Passcode" autocomplete="off"/>
+  <div class="err" id="gate-err"></div>
+  <button id="gate-btn">Enter</button>
+</div>
+<header>
+  <div class="kicker">Tagalong</div>
+  <h1>Admin</h1>
+  <div class="hint">Add, edit, or remove any spot. When you're done, tap Download and upload the file to GitHub to publish.</div>
+</header>
+
+<div class="banner">
+  Nothing here is live yet. Changes go public only after you <b>download deals.json</b> and upload it to your GitHub repo. This page can't change the app on its own, which is what keeps it safe.
+</div>
+
+<div class="count" id="count"></div>
+<main id="list"></main>
+
+<div class="bar">
+  <button class="add" id="add">＋ Add spot</button>
+  <button class="save" id="save">Download deals.json</button>
+</div>
+
+<script>
+// ── Set your admin passcode here (this one line). Only you should know it. ──
+// Note: this is a light gate for a small community app, not bank-grade security.
+// The real protection is that nothing publishes until YOU upload to GitHub.
+const ADMIN_PASSCODE = "SET_YOUR_PASSCODE_HERE";
+
+const DAYS=[["varies","Day varies"],["1","Monday"],["2","Tuesday"],["3","Wednesday"],["4","Thursday"],["5","Friday"],["6","Saturday"],["0","Sunday"]];
+let deals=[];
+
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function card(d,i){
+  const dayOpts=DAYS.map(([v,l])=>`<option value="${v}" ${String(d.day)===v?"selected":""}>${l}</option>`).join("");
+  return `<div class="card ${d.type==="event"?"event":"food"}" data-i="${i}">
+    <div class="toprow">
+      <select data-f="type" style="max-width:150px">
+        <option value="food" ${d.type!=="event"?"selected":""}>Kids eat free</option>
+        <option value="event" ${d.type==="event"?"selected":""}>Free event</option>
+      </select>
+      <button class="del" data-del="${i}">Remove</button>
+    </div>
+    <div class="row"><div><label>Place name</label><input data-f="name" value="${esc(d.name)}"/></div></div>
+    <div class="row"><div><label>What's free</label><input data-f="deal" value="${esc(d.deal)}"/></div></div>
+    <div class="row">
+      <div><label>Day</label><select data-f="day">${dayOpts}</select></div>
+      <div><label>Start</label><input data-f="start" type="time" value="${esc(d.start)}"/></div>
+      <div><label>End</label><input data-f="end" type="time" value="${esc(d.end)}"/></div>
+    </div>
+    <div class="row"><div><label>Where</label><input data-f="loc" value="${esc(d.loc)}"/></div></div>
+    <div class="row"><div><label>Link (optional)</label><input data-f="url" value="${esc(d.url)}" placeholder="https://"/></div></div>
+    <div class="row"><div><label>Notes</label><textarea data-f="note">${esc(d.note)}</textarea></div></div>
+    <label class="conf"><input type="checkbox" data-f="conf" ${d.conf?"checked":""}/> Confirmed (shows a check; unchecked shows "Unconfirmed" + Verify)</label>
+  </div>`;
+}
+
+function render(){
+  document.getElementById("list").innerHTML = deals.map(card).join("");
+  document.getElementById("count").textContent = deals.length+" spot"+(deals.length===1?"":"s");
+  // wire inputs back to data
+  document.querySelectorAll(".card").forEach(c=>{
+    const i=+c.dataset.i;
+    c.querySelectorAll("[data-f]").forEach(el=>{
+      el.addEventListener("input",()=>{
+        const f=el.dataset.f;
+        deals[i][f] = el.type==="checkbox" ? el.checked : el.value;
+        if(f==="type"){ c.classList.toggle("event",el.value==="event"); c.classList.toggle("food",el.value!=="event"); }
+      });
+    });
+  });
+  document.querySelectorAll("[data-del]").forEach(b=>{
+    b.onclick=()=>{ if(confirm("Remove "+(deals[+b.dataset.del].name||"this spot")+"?")){ deals.splice(+b.dataset.del,1); render(); } };
+  });
+}
+
+document.getElementById("add").onclick=()=>{
+  deals.unshift({id:"m"+Date.now().toString(36),type:"food",name:"",deal:"",day:"varies",start:"",end:"",loc:"",url:"",note:"",conf:true,src:"admin",lastChecked:new Date().toISOString().slice(0,10)});
+  render(); window.scrollTo({top:0,behavior:"smooth"});
+};
+
+document.getElementById("save").onclick=()=>{
+  const clean = deals.filter(d=>d.name&&d.deal).map(d=>({
+    id:d.id||("m"+Math.random().toString(36).slice(2,8)),
+    type:d.type==="event"?"event":"food", name:d.name.trim(), deal:d.deal.trim(),
+    day:d.day==="varies"?"varies":Number(d.day), start:d.start||"", end:d.end||"",
+    loc:(d.loc||"").trim(), note:(d.note||"").trim(), url:(d.url||"").trim(),
+    conf:!!d.conf, src:d.src||"admin", lastChecked:new Date().toISOString().slice(0,10)
+  }));
+  const out=JSON.stringify({updated:new Date().toISOString(), deals:clean}, null, 2);
+  const blob=new Blob([out],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download="deals.json"; a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+async function initAdmin(){
+  try{ const r=await fetch("deals.json",{cache:"no-store"}); if(r.ok){ const j=await r.json(); deals=(j.deals||[]).map(d=>({url:"",note:"",start:"",end:"",loc:"",...d})); } }
+  catch(e){}
+  render();
+}
+
+// ---- passcode gate ----
+function unlock(){
+  const val=document.getElementById("gate-input").value;
+  if(val===ADMIN_PASSCODE && ADMIN_PASSCODE!=="SET_YOUR_PASSCODE_HERE"){
+    document.getElementById("gate").style.display="none";
+    initAdmin();
+  } else if(ADMIN_PASSCODE==="SET_YOUR_PASSCODE_HERE"){
+    document.getElementById("gate-err").textContent="No passcode set yet. Edit ADMIN_PASSCODE in admin.html.";
+  } else {
+    document.getElementById("gate-err").textContent="Wrong passcode.";
+    document.getElementById("gate-input").value="";
+  }
+}
+document.getElementById("gate-btn").onclick=unlock;
+document.getElementById("gate-input").addEventListener("keydown",e=>{ if(e.key==="Enter") unlock(); });
+</script>
+</body>
+</html>
