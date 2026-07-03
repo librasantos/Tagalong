@@ -129,21 +129,6 @@
       "conf": true,
       "src": "kidsbowlfree.com",
       "lastChecked": "2026-07-02"
-    },
-    {
-      "id": "pin-free-summer-meals-varies-event",
-      "type": "event",
-      "name": "Free Summer Meals",
-      "deal": "Free breakfast & lunch for all kids 18 & under, all summer",
-      "day": "varies",
-      "start": "",
-      "end": "",
-      "loc": "Find your nearest site (zip 11010)",
-      "note": "USDA program, run on Long Island by Island Harvest. No sign-up, ID, or income check. Runs through early Sept. Enter your zip to find a nearby park, library, or school site.",
-      "url": "https://www.fna.usda.gov/sfsp/sitefinder",
-      "conf": true,
-      "src": "usda.gov",
-      "lastChecked": "2026-07-02"
     }
   ]
 }

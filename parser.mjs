@@ -66,10 +66,6 @@ const PINNED = [
     day:"varies", start:"", end:"", loc:"Register for your local center (zip 11010)",
     url:"https://www.kidsbowlfree.com/",
     note:"Sign up once at kidsbowlfree.com. Most centers Mon–Sat, ~May to Sept. Ages vary (often up to 15). Shoe rental not included.", conf:true },
-  { type:"event", name:"Free Summer Meals", deal:"Free breakfast & lunch for all kids 18 & under, all summer",
-    day:"varies", start:"", end:"", loc:"Find your nearest site (zip 11010)",
-    url:"https://www.fna.usda.gov/sfsp/sitefinder",
-    note:"USDA program, run on Long Island by Island Harvest. No sign-up, ID, or income check. Runs through early Sept. Enter your zip to find a nearby park, library, or school site.", conf:true },
 ];
 
 // ---------------------------------------------------------------------------
