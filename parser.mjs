@@ -25,6 +25,9 @@ const MODEL = "claude-sonnet-5";
 // lists them. Add anything you don't want to appear. Case-insensitive.
 const BLOCKLIST = [
   "spaghettini pizza trattoria",
+  // Only allow Smashburger if it ever comes directly from smashburger.com,
+  // not from aggregators. Blocked here so "call to confirm" listings stay out.
+  "smashburger",
 ];
 
 // Franklin Square is central-west Nassau. Keep deals in/near these towns.

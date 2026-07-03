@@ -88,20 +88,6 @@
       "lastChecked": "2026-07-02"
     },
     {
-      "id": "auto-smashburger-3-food",
-      "type": "food",
-      "name": "Smashburger",
-      "deal": "Kids 12 and under free with an adult meal, all day",
-      "day": 3,
-      "start": "",
-      "end": "",
-      "loc": "Nassau County locations",
-      "note": "Dine-in only. Call your local Smashburger to confirm participation.",
-      "conf": false,
-      "src": "mommypoppins.com",
-      "lastChecked": "2026-07-02"
-    },
-    {
       "id": "auto-rath-park-varies-event",
       "type": "event",
       "name": "Rath Park",
