@@ -28,6 +28,9 @@ const BLOCKLIST = [
   // Only allow Smashburger if it ever comes directly from smashburger.com,
   // not from aggregators. Blocked here so "call to confirm" listings stay out.
   "smashburger",
+  // Duplicate of the curated "American Beauty Bistro" entry — keep the scraped
+  // "American Beauty" listing out so it doesn't show twice.
+  "american beauty",
 ];
 
 // Franklin Square is central-west Nassau. Keep deals in/near these towns.
@@ -240,7 +243,8 @@ async function main() {
       const raw = await extract(text, s.type);
       for (const d of normalize(raw, s.url)) {
         if (!d.name || !d.deal) continue;
-        if (BLOCKLIST.includes(d.name.toLowerCase().trim())) continue; // dropped on purpose
+        const nm = d.name.toLowerCase().trim();
+        if (BLOCKLIST.some(b => nm.includes(b))) continue; // dropped on purpose
         // First verified source wins; otherwise keep what we have.
         const existing = merged.get(keyOf(d));
         if (!existing || (d.conf && !existing.conf)) merged.set(keyOf(d), d);
