@@ -80,7 +80,7 @@
 
   .actions{display:flex;gap:8px;margin-top:13px;}
   .btn{flex:1;border:none;border-radius:12px;padding:11px;font-size:13.5px;font-weight:800;cursor:pointer;
-    font-family:inherit;transition:.15s;display:flex;align-items:center;justify-content:center;gap:6px;}
+    font-family:inherit;transition:.15s;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;}
   .btn.cal{background:var(--ink);color:#fff;}
   .btn.cal:disabled{background:#e9e4d9;color:#a7b0b8;cursor:not-allowed;}
   .btn.ver{background:#fff;color:var(--ink);border:1.5px solid var(--line);flex:0 0 auto;padding:11px 14px;}
@@ -340,8 +340,10 @@ function render(){
       ${e.note?`<p class="note">${esc(e.note)}</p>`:""}
       <div class="src">${e.conf?"✓ "+esc(e.src||"Community"):`<span class="unconf">Unconfirmed</span> ${esc(e.src||"Community")}`}</div>
       <div class="actions">
-        <button class="btn cal" ${canCal?"":"disabled"} onclick="addCal('${e.id}')">
-          ${canCal?"＋ Add to Calendar":"Set a day first"}</button>
+        ${e.url
+          ? `<a class="btn cal" href="${esc(e.url)}" target="_blank" rel="noopener">Register ↗</a>`
+          : `<button class="btn cal" ${canCal?"":"disabled"} onclick="addCal('${e.id}')">
+              ${canCal?"＋ Add to Calendar":"Set a day first"}</button>`}
         ${e.conf?"":`<button class="btn ver" onclick="verify('${e.id}')">Verify</button>`}
       </div>
     </div>`;
