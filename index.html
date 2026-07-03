@@ -449,7 +449,7 @@ document.getElementById("save").onclick=()=>{
   if(!name||!deal){ alert("Add a place name and what's free."); return; }
   const dayName=document.getElementById("f-day").selectedOptions[0].text;
   const body=`New Tagalong suggestion:\n\nType: ${formType==="food"?"Kids eat free":"Free event"}\nPlace: ${name}\nWhat's free: ${deal}\nDay: ${dayName}\nTime: ${document.getElementById("f-start").value} to ${document.getElementById("f-end").value}\nWhere: ${document.getElementById("f-loc").value.trim()}\nNotes: ${document.getElementById("f-note").value.trim()}\n\n(Sent from Tagalong. Reviewed before it goes live.)`;
-  const to="SET_YOUR_EMAIL_HERE";
+  const to="ly.santos@gmail.com";
   window.location.href="mailto:"+to+"?subject="+encodeURIComponent("Tagalong suggestion: "+name)+"&body="+encodeURIComponent(body);
   closeSheet(); confetti(); ["f-name","f-deal","f-loc","f-note"].forEach(i=>document.getElementById(i).value=""); toast("Thanks — sending your suggestion");
 };
