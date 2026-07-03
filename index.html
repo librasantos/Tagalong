@@ -400,7 +400,7 @@ Notes: ${document.getElementById("f-note").value.trim()}
 
 (Sent from Tagalong. Reviewed before it goes live.)`;
   // Suggestions go to you for review — nothing posts to the app automatically.
-  const to = "SET_YOUR_EMAIL_HERE";
+  const to = "ly.santos@gmail.com";
   window.location.href = "mailto:"+to+"?subject="+encodeURIComponent("Tagalong suggestion: "+name)+"&body="+encodeURIComponent(body);
   closeSheet();
   ["f-name","f-deal","f-loc","f-note"].forEach(i=>document.getElementById(i).value="");
