@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T15:13:32.912Z",
+  "updated": "2026-07-13T14:09:05.357Z",
   "deals": [
     {
       "id": "lib-2026-07-13-tai-chi",
@@ -15,7 +15,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16802265",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-13-triceratots",
@@ -31,7 +31,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16841335",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-13-pokemon-fantastic-fossils-wi",
@@ -47,7 +47,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16813717",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-13-weave-a-bookmark",
@@ -63,7 +63,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16800047",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-20-tai-chi",
@@ -79,7 +79,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16802266",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-20-pokemon-card-trading-for-kid",
@@ -95,7 +95,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16832706",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-20-kindness-camp-with-howie-s-h",
@@ -111,7 +111,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16828675",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-27-tai-chi",
@@ -127,69 +127,22 @@
       "url": "https://franklinsquarepl.libcal.com/event/16802267",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "auto-miller-s-ale-house-2-food",
       "type": "food",
       "name": "Miller's Ale House",
-      "deal": "Kids eat free all day Tuesdays with $10 adult purchase, limit 2 kids",
+      "deal": "Kids eat free all day Tuesdays with $10+ purchase, limit 2 kids per table",
       "day": 2,
       "start": "",
       "end": "",
-      "loc": "Levittown, NY",
-      "note": "Limit two kid meals per table; call to confirm",
+      "loc": "Levittown",
+      "note": "Multiple LI locations; call to confirm",
       "url": "",
       "conf": false,
       "src": "mommypoppins.com",
-      "lastChecked": "2026-07-06"
-    },
-    {
-      "id": "auto-tap-room-2-food",
-      "type": "food",
-      "name": "Tap Room",
-      "deal": "One free kids meal with $15+ food purchase, limit 2 per table",
-      "day": 2,
-      "start": "",
-      "end": "",
-      "loc": "Garden City",
-      "note": "All day Tuesday; multiple LI locations, call to confirm",
-      "url": "",
-      "conf": false,
-      "src": "iloveny.com",
-      "lastChecked": "2026-07-06"
-    },
-    {
-      "id": "lib-2026-07-07-do-re-mi-piano-me",
-      "type": "event",
-      "name": "Do Re Mi Piano & Me",
-      "deal": "Free kids program at the library",
-      "day": 2,
-      "date": "2026-07-07",
-      "start": "14:30",
-      "end": "15:30",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Rising Grades 1-3 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17019070",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
-    },
-    {
-      "id": "lib-2026-07-07-fiber-art-materials-swap",
-      "type": "event",
-      "name": "Fiber Art Materials Swap",
-      "deal": "Free kids program at the library",
-      "day": 2,
-      "date": "2026-07-07",
-      "start": "20:00",
-      "end": "22:00",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Have extra fiber crafting supplies you’re not using? Bring your gently used or surplus fiber supplies — yarn, fabric, thread, ribbons, needles, scisso Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16799974",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-14-do-re-mi-piano-me",
@@ -205,7 +158,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17019071",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-14-dinosaur-diamond-art",
@@ -221,7 +174,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16438148",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-14-online-a-tribute-to-connie-f",
@@ -237,7 +190,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16503508",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-21-do-re-mi-piano-me",
@@ -253,7 +206,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17019072",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-21-bebes-of-the-island-bilingua",
@@ -269,7 +222,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16791836",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-21-kindness-camp-with-howie-s-h",
@@ -285,23 +238,71 @@
       "url": "https://franklinsquarepl.libcal.com/event/16828676",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
-      "id": "lib-2026-07-08-i-dig-your-new-pet-",
+      "id": "lib-2026-07-28-do-re-mi-piano-me",
       "type": "event",
-      "name": "I Dig Your New Pet!",
+      "name": "Do Re Mi Piano & Me",
       "deal": "Free kids program at the library",
-      "day": 3,
-      "date": "2026-07-08",
-      "start": "19:00",
-      "end": "19:45",
+      "day": 2,
+      "date": "2026-07-28",
+      "start": "14:30",
+      "end": "15:30",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Grades 3-6 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16807445",
+      "note": "Rising Grades 1-3 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17019073",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
+    },
+    {
+      "id": "lib-2026-07-28-bebes-of-the-island-bilingua",
+      "type": "event",
+      "name": "Bebes of the Island Bilingual Story Time",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-07-28",
+      "start": "15:00",
+      "end": "16:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Ages 2-5 (pre-K) Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16791840",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-07-13"
+    },
+    {
+      "id": "lib-2026-07-28-weird-time-dino-edition",
+      "type": "event",
+      "name": "Weird Time: Dino Edition",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-07-28",
+      "start": "22:00",
+      "end": "23:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Grades 3-6 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16804501",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-07-13"
+    },
+    {
+      "id": "lib-2026-07-28-indigo-scarf-workshop-with-b",
+      "type": "event",
+      "name": "Indigo Scarf Workshop with Bernadette Puleo",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-07-28",
+      "start": "22:00",
+      "end": "00:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Experience the magic of indigo and take home a beautiful silk scarf. With some leaves of the Japanese Indigo plant, you will dye your silk scarf and s Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/15488581",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-15-dino-rariums",
@@ -317,7 +318,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16807537",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-15-introduction-to-reiki",
@@ -333,7 +334,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16452819",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-22-baby-start",
@@ -349,7 +350,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16832162",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-22-a-time-for-kids-preschool-re",
@@ -365,7 +366,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16832177",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-22-kindness-camp-with-howie-s-h",
@@ -381,7 +382,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16828677",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-22-introduction-to-reiki",
@@ -397,55 +398,23 @@
       "url": "https://franklinsquarepl.libcal.com/event/16452820",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
-      "id": "lib-2026-07-09-a-dino-mite-pen-party-for-am",
+      "id": "lib-2026-07-29-playhooray",
       "type": "event",
-      "name": "A Dino-Mite Pen Party for America's 250th Birthday",
+      "name": "PlayHooray",
       "deal": "Free kids program at the library",
-      "day": 4,
-      "date": "2026-07-09",
-      "start": "19:00",
-      "end": "21:00",
+      "day": 3,
+      "date": "2026-07-29",
+      "start": "14:00",
+      "end": "14:45",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Entering grades 2-6 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16734010",
+      "note": "pre-K with caregiver(s) Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16521537",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
-    },
-    {
-      "id": "lib-2026-07-09-check-checkmate-it-s-chess-c",
-      "type": "event",
-      "name": "Check... Checkmate... It's Chess Club!",
-      "deal": "Free kids program at the library",
-      "day": 4,
-      "date": "2026-07-09",
-      "start": "20:00",
-      "end": "21:00",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Grades K-6 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16886597",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
-    },
-    {
-      "id": "lib-2026-07-09-history-comes-alive-ask-mrs-",
-      "type": "event",
-      "name": "History Comes Alive - Ask Mrs. Lincoln",
-      "deal": "Free kids program at the library",
-      "day": 4,
-      "date": "2026-07-09",
-      "start": "23:00",
-      "end": "00:30",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Join us for a unique living history event starring Heléna Geberer Eilenberg. Utilizing primary sources—including Mary Todd Lincoln's own correspondenc Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16774804",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-16-baby-me-yoga",
@@ -461,7 +430,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16349734",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-16-toddler-yoga",
@@ -477,7 +446,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16349736",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-16-monthly-movie-one-battle-aft",
@@ -493,7 +462,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16726776",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-16-magic-with-ari-bisk-",
@@ -509,7 +478,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16416342",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-16-kids-yoga",
@@ -525,7 +494,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16349825",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-16-tween-yoga",
@@ -541,7 +510,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16349842",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-23-delicious-dino-dirt-cups",
@@ -557,7 +526,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16807766",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-23-check-checkmate-it-s-chess-c",
@@ -573,7 +542,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16886598",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-23-kindness-camp-with-howie-s-h",
@@ -589,23 +558,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16828678",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
-    },
-    {
-      "id": "lib-2026-07-10-lil-athletes",
-      "type": "event",
-      "name": "Lil Athletes",
-      "deal": "Free kids program at the library",
-      "day": 5,
-      "date": "2026-07-10",
-      "start": "16:00",
-      "end": "16:45",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Ages 3-5 years Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16750102",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-17-water-safety-storytime-with-",
@@ -621,7 +574,23 @@
       "url": "https://franklinsquarepl.libcal.com/event/16422845",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
+    },
+    {
+      "id": "lib-2026-07-31-t-rex-t-party",
+      "type": "event",
+      "name": "T-Rex T-Party",
+      "deal": "Free kids program at the library",
+      "day": 5,
+      "date": "2026-07-31",
+      "start": "15:00",
+      "end": "16:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Pre-K to 1st Grade with Caregiver Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16804626",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-07-13"
     },
     {
       "id": "lib-2026-07-25-cpr-for-friends-family",
@@ -637,7 +606,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16713105",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-07-06"
+      "lastChecked": "2026-07-13"
     }
   ]
 }
