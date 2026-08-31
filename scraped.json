@@ -1,83 +1,83 @@
 {
-  "updated": "2026-08-24T12:29:24.732Z",
+  "updated": "2026-08-31T18:28:54.470Z",
   "deals": [
     {
-      "id": "lib-2026-08-24-canceled-tai-chi",
+      "id": "lib-2026-09-14-paper-marbling-afternoon-ses",
       "type": "event",
-      "name": "CANCELED: Tai Chi",
+      "name": "Paper Marbling - Afternoon Session",
       "deal": "Free kids program at the library",
       "day": 1,
-      "date": "2026-08-24",
-      "start": "14:30",
-      "end": "15:30",
+      "date": "2026-09-14",
+      "start": "18:00",
+      "end": "19:30",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "THIS CLASS IS CANCELED, WILL RESUME IN THE LATE FALL. Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16802271",
+      "note": "Join us for a hands-on lesson in the art of paper marbling! Learn about the traditional uses of this unique monoprint technique while using provided m Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17214681",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
-      "id": "lib-2026-08-24-tea-stained-tea-chest",
+      "id": "lib-2026-09-14-paper-marbling-evening-sessi",
       "type": "event",
-      "name": "Tea Stained Tea Chest",
+      "name": "Paper Marbling - Evening Session",
       "deal": "Free kids program at the library",
       "day": 1,
-      "date": "2026-08-24",
-      "start": "23:00",
-      "end": "00:30",
+      "date": "2026-09-14",
+      "start": "20:30",
+      "end": "22:00",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Enjoy a craft inspired by the turbulent beginnings of our nation, most specifically by the Boston Tea Party! Learn some of the historical context of t Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16800920",
+      "note": "Join us for a hands-on lesson in the art of paper marbling! Learn about the traditional uses of this unique monoprint technique while using provided m Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17214701",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
-      "id": "lib-2026-08-31-canceled-tai-chi",
+      "id": "lib-2026-09-21-goyo-creative-movement-sel-c",
       "type": "event",
-      "name": "CANCELED: Tai Chi",
+      "name": "GoYo Creative Movement & SEL Class",
       "deal": "Free kids program at the library",
       "day": 1,
-      "date": "2026-08-31",
-      "start": "14:30",
-      "end": "15:30",
+      "date": "2026-09-21",
+      "start": "15:30",
+      "end": "16:15",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "THIS CLASS IS CANCELED. PROGRAM WILL RESUME IN THE LATE FALL. Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16802272",
+      "note": "Grades K-3 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17059161",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "auto-miller-s-ale-house-2-food",
       "type": "food",
       "name": "Miller's Ale House",
-      "deal": "Kids eat free all day Tuesdays with $10+ purchase, limit 2 kids",
+      "deal": "Kids eat free with $10+ adult purchase, limit 2 kids per table",
       "day": 2,
       "start": "",
       "end": "",
-      "loc": "Levittown, NY",
-      "note": "Choices include grilled chicken, shrimp, mini burgers, quesadillas",
+      "loc": "Levittown",
+      "note": "call ahead to confirm participation",
       "url": "",
       "conf": false,
       "src": "mommypoppins.com",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "auto-tap-room-2-food",
       "type": "food",
       "name": "Tap Room",
-      "deal": "One free kids meal with purchase of $15+ food item, limit 2 per table",
+      "deal": "One free kids meal with purchase of $15+ food item, limit two per table",
       "day": 2,
       "start": "",
       "end": "",
       "loc": "Garden City",
-      "note": "Multiple Long Island locations; call to confirm",
+      "note": "Multiple LI locations; kids menu includes drink",
       "url": "",
       "conf": false,
       "src": "iloveny.com",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "lib-2026-09-08-chalk-full-of-fun-diy-chalkb",
@@ -93,23 +93,55 @@
       "url": "https://franklinsquarepl.libcal.com/event/17319816",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
-      "id": "lib-2026-08-26-adult-summer-reading-end-par",
+      "id": "lib-2026-09-15-international-dot-day",
       "type": "event",
-      "name": "Adult Summer Reading End Party",
+      "name": "International Dot Day",
       "deal": "Free kids program at the library",
-      "day": 3,
-      "date": "2026-08-26",
-      "start": "22:30",
-      "end": "00:30",
+      "day": 2,
+      "date": "2026-09-15",
+      "start": "20:00",
+      "end": "20:30",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "By invitation only! Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16732579",
+      "note": "GRADES 3-6 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17259771",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
+    },
+    {
+      "id": "lib-2026-09-15-online-safety-with-roblox",
+      "type": "event",
+      "name": "Online Safety with Roblox",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-09-15",
+      "start": "22:00",
+      "end": "23:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Parents & Children Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16896694",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-08-31"
+    },
+    {
+      "id": "lib-2026-09-15-discover-franklin-square-s-h",
+      "type": "event",
+      "name": "Discover Franklin Square's History with Dr. Paul van Wie",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-09-15",
+      "start": "23:00",
+      "end": "00:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "In 1996, Franklin Square marked its Bicentennial with grand celebrations, community gatherings, and a renewed appreciation for our town’s unique herit Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16711283",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "lib-2026-09-10-chalk-full-of-fun-diy-chalkb",
@@ -125,7 +157,55 @@
       "url": "https://franklinsquarepl.libcal.com/event/17306656",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
+    },
+    {
+      "id": "lib-2026-09-17-monthly-movie-michael",
+      "type": "event",
+      "name": "Monthly Movie - Michael",
+      "deal": "Free kids program at the library",
+      "day": 4,
+      "date": "2026-09-17",
+      "start": "17:00",
+      "end": "19:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "The story of pop superstar Michael Jackson -- from his extraordinary early days in the Jackson 5 to the visionary artist whose creative ambition fuels Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17219776",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-08-31"
+    },
+    {
+      "id": "lib-2026-09-17-kids-yoga",
+      "type": "event",
+      "name": "Kids Yoga",
+      "deal": "Free kids program at the library",
+      "day": 4,
+      "date": "2026-09-17",
+      "start": "20:30",
+      "end": "21:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Grades K-4 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16883253",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-08-31"
+    },
+    {
+      "id": "lib-2026-09-18-toddler-yoga",
+      "type": "event",
+      "name": "Toddler Yoga",
+      "deal": "Free kids program at the library",
+      "day": 5,
+      "date": "2026-09-18",
+      "start": "14:30",
+      "end": "15:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Ages 2-5 (pre-K) Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/16883223",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "lib-2026-09-12-baby-start",
@@ -141,7 +221,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17356467",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "lib-2026-09-12-italian-story-time-for-toddl",
@@ -157,7 +237,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17356968",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     },
     {
       "id": "lib-2026-09-12-becoming-a-millionaire-commu",
@@ -173,7 +253,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17356901",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-08-24"
+      "lastChecked": "2026-08-31"
     }
   ]
 }
