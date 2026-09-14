@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T16:54:09.952Z",
+  "updated": "2026-09-14T17:17:16.093Z",
   "deals": [
     {
       "id": "lib-2026-09-14-paper-marbling-afternoon-ses",
@@ -15,7 +15,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17214681",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-14-paper-marbling-evening-sessi",
@@ -31,7 +31,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17214701",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-21-goyo-creative-movement-sel-c",
@@ -47,7 +47,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17059161",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-21-howie-s-heart-the-found-joy-",
@@ -63,7 +63,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17329175",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-21-pokemon-card-trading-for-kid",
@@ -79,53 +79,37 @@
       "url": "https://franklinsquarepl.libcal.com/event/17255620",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "auto-miller-s-ale-house-2-food",
       "type": "food",
       "name": "Miller's Ale House",
-      "deal": "Kids eat free with a $10+ purchase, limit two kids per table",
+      "deal": "Kids eat free all day with $10+ purchase, limit 2 kids per table",
       "day": 2,
       "start": "",
       "end": "",
-      "loc": "Levittown",
-      "note": "Dine-in, kids menu includes grilled chicken, shrimp, mini burgers",
+      "loc": "Levittown, NY",
+      "note": "Kids menu includes grilled chicken, shrimp, mini burgers, etc.",
       "url": "",
       "conf": false,
       "src": "mommypoppins.com",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "auto-tap-room-2-food",
       "type": "food",
       "name": "Tap Room",
-      "deal": "One free kids meal with purchase of $15+ food item",
+      "deal": "Free kids meal with $15+ food purchase, limit two per table",
       "day": 2,
       "start": "",
       "end": "",
       "loc": "Garden City",
-      "note": "Limit two kids meals per table; multiple LI locations",
+      "note": "All day Tuesday; multiple Long Island locations",
       "url": "",
       "conf": false,
       "src": "iloveny.com",
-      "lastChecked": "2026-09-07"
-    },
-    {
-      "id": "lib-2026-09-08-chalk-full-of-fun-diy-chalkb",
-      "type": "event",
-      "name": "Chalk Full of Fun: DIY Chalkboards",
-      "deal": "Free kids program at the library",
-      "day": 2,
-      "date": "2026-09-08",
-      "start": "22:00",
-      "end": "22:45",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Grades 3-6 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17319816",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-15-international-dot-day",
@@ -141,7 +125,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17259771",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-15-online-safety-with-roblox",
@@ -157,7 +141,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16896694",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-15-discover-franklin-square-s-h",
@@ -173,7 +157,39 @@
       "url": "https://franklinsquarepl.libcal.com/event/16711283",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
+    },
+    {
+      "id": "lib-2026-09-29-9-11-tribute-with-survivor-s",
+      "type": "event",
+      "name": "9/11 Tribute with Survivor Stanley Praimnath",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-09-29",
+      "start": "15:00",
+      "end": "16:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "As we mark the 25th anniversary of September 11th, we invite you to join us for a powerful firsthand account from 9/11 survivor, Stanley Praimnath. Th Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17304797",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-09-14"
+    },
+    {
+      "id": "lib-2026-09-29-child-abuse-prevention-aware",
+      "type": "event",
+      "name": "Child Abuse Prevention Awareness Seminar",
+      "deal": "Free kids program at the library",
+      "day": 2,
+      "date": "2026-09-29",
+      "start": "22:00",
+      "end": "00:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "A conversation on child abuse prevention awareness featuring a presentation and book signing for Prevención del Abuso Sexual Infantil. This educationa Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17268030",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-16-sleep-peacefully-using-essen",
@@ -189,7 +205,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17129450",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-23-adult-cardio-hula-hoop",
@@ -205,23 +221,39 @@
       "url": "https://franklinsquarepl.libcal.com/event/16891448",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
-      "id": "lib-2026-09-10-chalk-full-of-fun-diy-chalkb",
+      "id": "lib-2026-09-30-playhooray",
       "type": "event",
-      "name": "Chalk Full of Fun: DIY Chalkboards",
+      "name": "PlayHooray",
       "deal": "Free kids program at the library",
-      "day": 4,
-      "date": "2026-09-10",
-      "start": "19:45",
-      "end": "20:30",
+      "day": 3,
+      "date": "2026-09-30",
+      "start": "14:30",
+      "end": "15:15",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Grades K-2 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17306656",
+      "note": "pre-K with caregiver(s) Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17268797",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
+    },
+    {
+      "id": "lib-2026-09-30-howie-s-heart-connect-four-a",
+      "type": "event",
+      "name": "Howie's Heart: Connect Four a Cause - Ages 12 & up",
+      "deal": "Free kids program at the library",
+      "day": 3,
+      "date": "2026-09-30",
+      "start": "22:30",
+      "end": "00:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Come join us and help support Minds In Need's mental health outreach efforts by: Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17329155",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-17-monthly-movie-michael",
@@ -237,7 +269,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17219776",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-17-kids-yoga",
@@ -253,7 +285,23 @@
       "url": "https://franklinsquarepl.libcal.com/event/16883253",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
+    },
+    {
+      "id": "lib-2026-10-01-howie-s-heart-holiday-cheer-",
+      "type": "event",
+      "name": "Howie's Heart: Holiday Cheer Bus Info Meeting",
+      "deal": "Free kids program at the library",
+      "day": 4,
+      "date": "2026-10-01",
+      "start": "23:00",
+      "end": "00:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Bring holiday cheer to kids coping with cancer, illness & other tough stuff Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17329197",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-18-toddler-yoga",
@@ -269,7 +317,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16883223",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-25-howie-s-heart-lemonade-stand",
@@ -285,7 +333,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17367727",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
       "id": "lib-2026-09-25-lego-hour",
@@ -301,55 +349,38 @@
       "url": "https://franklinsquarepl.libcal.com/event/17259808",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
-      "id": "lib-2026-09-12-baby-start",
+      "id": "lib-2026-10-03-sing-n-sign",
       "type": "event",
-      "name": "Baby Start",
+      "name": "Sing N' Sign",
       "deal": "Free kids program at the library",
       "day": 6,
-      "date": "2026-09-12",
-      "start": "14:15",
-      "end": "14:45",
+      "date": "2026-10-03",
+      "start": "17:00",
+      "end": "17:40",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Birth - 18 months Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17356467",
+      "note": "Ages 18-36mths Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17319758",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "lastChecked": "2026-09-14"
     },
     {
-      "id": "lib-2026-09-12-italian-story-time-for-toddl",
-      "type": "event",
-      "name": "Italian Story Time for Toddlers",
-      "deal": "Free kids program at the library",
-      "day": 6,
-      "date": "2026-09-12",
-      "start": "15:00",
-      "end": "15:45",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Ages 3-5 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17356968",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
-    },
-    {
-      "id": "lib-2026-09-12-becoming-a-millionaire-commu",
-      "type": "event",
-      "name": "Becoming a Millionaire - Community Service",
-      "deal": "Free kids program at the library",
-      "day": 6,
-      "date": "2026-09-12",
-      "start": "15:00",
-      "end": "03:45",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Grades 6–12  Earn 2 Hours of Community Service Credit! Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17356901",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-09-07"
+      "id": "auto-ihop-varies-food",
+      "type": "food",
+      "name": "IHOP",
+      "deal": "Kids eat free with purchase of an adult meal",
+      "day": "varies",
+      "start": "16:00",
+      "end": "",
+      "loc": "Williston Park, NY (near Mineola/Garden City)",
+      "note": "Call ahead to confirm local participation in nationwide promo",
+      "url": "",
+      "conf": false,
+      "src": "mommypoppins.com",
+      "lastChecked": "2026-09-14"
     }
   ]
 }
