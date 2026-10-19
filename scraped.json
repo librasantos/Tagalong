@@ -1,22 +1,6 @@
 {
-  "updated": "2026-10-12T20:37:50.081Z",
+  "updated": "2026-10-19T17:59:41.743Z",
   "deals": [
-    {
-      "id": "lib-2026-10-19-story-time-ages-3-4-years",
-      "type": "event",
-      "name": "Story Time, Ages 3-4 years",
-      "deal": "Free kids program at the library",
-      "day": 1,
-      "date": "2026-10-19",
-      "start": "14:30",
-      "end": "15:15",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Ages 3-4 years Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17267349",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
-    },
     {
       "id": "lib-2026-10-19-pokemon-card-trading-for-kid",
       "type": "event",
@@ -31,7 +15,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17255646",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-26-story-time-ages-3-4-years",
@@ -47,7 +31,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267350",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-11-02-story-time-ages-3-4-years",
@@ -63,69 +47,53 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267351",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
+    },
+    {
+      "id": "lib-2026-11-02-general-tech-internet-help",
+      "type": "event",
+      "name": "General Tech & Internet Help",
+      "deal": "Free kids program at the library",
+      "day": 1,
+      "date": "2026-11-02",
+      "start": "22:00",
+      "end": "23:30",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Have a question about your phone, tablet, laptop, or the internet? Drop in and receive one-on-one help with everyday technology, from using apps and e Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17643555",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "auto-miller-s-ale-house-2-food",
       "type": "food",
       "name": "Miller's Ale House",
-      "deal": "Kids eat free all day with $10+ adult purchase, limit 2 kids",
+      "deal": "Kids eat free all day Tuesdays with a $10+ adult purchase, limit 2 kids per table",
       "day": 2,
       "start": "",
       "end": "",
       "loc": "Levittown",
-      "note": "Limit two kid meals per table; call to confirm",
+      "note": "Limit two kid meals per table",
       "url": "",
       "conf": false,
       "src": "mommypoppins.com",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "auto-tap-room-2-food",
       "type": "food",
       "name": "Tap Room",
-      "deal": "Free kids meal with $15+ food purchase, limit 2 per table",
+      "deal": "Kids eat free with $15+ food purchase, limit 2 per table",
       "day": 2,
       "start": "",
       "end": "",
       "loc": "Garden City",
-      "note": "Multiple Long Island locations; call to confirm",
+      "note": "All day Tuesday; multiple Long Island locations",
       "url": "",
       "conf": false,
       "src": "iloveny.com",
-      "lastChecked": "2026-10-12"
-    },
-    {
-      "id": "lib-2026-10-13-leaf-art",
-      "type": "event",
-      "name": "Leaf Art",
-      "deal": "Free kids program at the library",
-      "day": 2,
-      "date": "2026-10-13",
-      "start": "14:00",
-      "end": "14:30",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Ages 3-5 Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17259853",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
-    },
-    {
-      "id": "lib-2026-10-13-from-the-smithsonian-museum-",
-      "type": "event",
-      "name": "From the Smithsonian Museum Part 2",
-      "deal": "Free kids program at the library",
-      "day": 2,
-      "date": "2026-10-13",
-      "start": "17:00",
-      "end": "18:30",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Join us at the library for a PowerPoint visit to the Smithsonian Museum of American History and wander around the so called \"Attic of America.\" It's c Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17100530",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-27-weird-time-halloweird",
@@ -141,7 +109,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267331",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-27-tooth-and-nail-the-history-o",
@@ -157,55 +125,39 @@
       "url": "https://franklinsquarepl.libcal.com/event/16341500",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
-      "id": "lib-2026-10-14-bookmaking-afternoon-session",
+      "id": "lib-2026-11-03-tuesday-morning-book-discuss",
       "type": "event",
-      "name": "Bookmaking - Afternoon Session",
+      "name": "Tuesday Morning Book Discussion",
       "deal": "Free kids program at the library",
-      "day": 3,
-      "date": "2026-10-14",
-      "start": "19:00",
-      "end": "20:30",
+      "day": 2,
+      "date": "2026-11-03",
+      "start": "15:30",
+      "end": "16:30",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "What’s a more fitting Library craft than making your own book? Learn the basics of bookbinding and get hands-on experience crafting your own unique bo Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17216062",
+      "note": "The Berry Pickers by Amanda Peters Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17225967",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
-      "id": "lib-2026-10-14-bookmaking-evening-session",
+      "id": "lib-2026-11-03-howie-s-heart-a-seat-at-the-",
       "type": "event",
-      "name": "Bookmaking - Evening Session",
+      "name": "Howie's Heart: A Seat at the Table Thanksgiving Service Event",
       "deal": "Free kids program at the library",
-      "day": 3,
-      "date": "2026-10-14",
+      "day": 2,
+      "date": "2026-11-03",
       "start": "21:30",
       "end": "23:00",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "What’s a more fitting Library craft than making your own book? Learn the basics of bookbinding and get hands-on experience crafting your own unique bo Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17216083",
+      "note": "For ages 10 and up. Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17398751",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
-    },
-    {
-      "id": "lib-2026-10-14--cancelled-dungeons-dragons-",
-      "type": "event",
-      "name": "**CANCELLED** Dungeons & Dragons: Kids Fall Campaign",
-      "deal": "Free kids program at the library",
-      "day": 3,
-      "date": "2026-10-14",
-      "start": "22:00",
-      "end": "00:00",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "**Series has been cancelled due to low enrollment and may be rescheduled in the late winter/early spring** Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17326914",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-21-story-time-ages-18-24-months",
@@ -221,7 +173,23 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267279",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
+    },
+    {
+      "id": "lib-2026-10-21-homework-help-for-grades-3-6",
+      "type": "event",
+      "name": "Homework Help for Grades 3-6",
+      "deal": "Free kids program at the library",
+      "day": 3,
+      "date": "2026-10-21",
+      "start": "22:00",
+      "end": "23:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17833914",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-21--cancelled-dungeons-dragons-",
@@ -237,7 +205,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17326915",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-28-story-time-ages-18-24-months",
@@ -253,7 +221,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267280",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-28--cancelled-dungeons-dragons-",
@@ -269,39 +237,23 @@
       "url": "https://franklinsquarepl.libcal.com/event/17326916",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
-      "id": "lib-2026-10-15-monthly-movie-pressure",
+      "id": "lib-2026-11-04-story-time-ages-18-24-months",
       "type": "event",
-      "name": "Monthly Movie - Pressure",
+      "name": "Story Time, Ages 18-24 months",
       "deal": "Free kids program at the library",
-      "day": 4,
-      "date": "2026-10-15",
-      "start": "17:00",
-      "end": "19:00",
+      "day": 3,
+      "date": "2026-11-04",
+      "start": "15:30",
+      "end": "16:00",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "The fate of the free world hangs in the balance as Gen. Dwight D. Eisenhower and Capt. James Stagg faces an impossible choice -- launch the D-Day inva Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17219781",
+      "note": "Ages Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17267281",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
-    },
-    {
-      "id": "lib-2026-10-15-grades-k-3-book-club-spooky-",
-      "type": "event",
-      "name": "Grades K-3 Book Club: Spooky Swap",
-      "deal": "Free kids program at the library",
-      "day": 4,
-      "date": "2026-10-15",
-      "start": "19:30",
-      "end": "20:30",
-      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "A new way to book club! Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/17358032",
-      "conf": true,
-      "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-22-story-time-age-2",
@@ -317,7 +269,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267363",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-22-grades-4-6-book-club-spooky-",
@@ -333,7 +285,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17358036",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-22-kids-yoga",
@@ -349,7 +301,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16883317",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-22-bookmarks-book-discussion",
@@ -365,7 +317,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/17044277",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-29-story-time-age-2",
@@ -381,23 +333,39 @@
       "url": "https://franklinsquarepl.libcal.com/event/17267364",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
-      "id": "lib-2026-10-16-toddler-yoga",
+      "id": "lib-2026-11-05-story-time-age-2",
       "type": "event",
-      "name": "Toddler Yoga",
+      "name": "Story Time, Age 2",
       "deal": "Free kids program at the library",
-      "day": 5,
-      "date": "2026-10-16",
-      "start": "14:30",
-      "end": "15:00",
+      "day": 4,
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
       "loc": "Franklin Square Public Library, 19 Lincoln Rd",
-      "note": "Ages 2-5 (pre-K) Free to attend; some programs ask you to register.",
-      "url": "https://franklinsquarepl.libcal.com/event/16897207",
+      "note": "Ages Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17267365",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
+    },
+    {
+      "id": "lib-2026-11-05-check-checkmate-it-s-chess-c",
+      "type": "event",
+      "name": "Check... Checkmate... It's Chess Club!",
+      "deal": "Free kids program at the library",
+      "day": 4,
+      "date": "2026-11-05",
+      "start": "21:00",
+      "end": "22:00",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Grades K-6 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17634482",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-23-adelphi-hearing-screenings",
@@ -413,7 +381,7 @@
       "url": "https://franklinsquarepl.libcal.com/event/16710882",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "lib-2026-10-23-mutant-toys",
@@ -429,22 +397,54 @@
       "url": "https://franklinsquarepl.libcal.com/event/17259941",
       "conf": true,
       "src": "fslibrary.org",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
+    },
+    {
+      "id": "lib-2026-11-06-tooth-time-with-little-tooth",
+      "type": "event",
+      "name": "Tooth Time with Little Tooth Crew",
+      "deal": "Free kids program at the library",
+      "day": 5,
+      "date": "2026-11-06",
+      "start": "15:30",
+      "end": "16:15",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Ages 2-5 Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17658748",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-10-19"
+    },
+    {
+      "id": "lib-2026-11-07-sing-n-sign",
+      "type": "event",
+      "name": "Sing N' Sign",
+      "deal": "Free kids program at the library",
+      "day": 6,
+      "date": "2026-11-07",
+      "start": "18:00",
+      "end": "18:45",
+      "loc": "Franklin Square Public Library, 19 Lincoln Rd",
+      "note": "Ages 18-36mths Free to attend; some programs ask you to register.",
+      "url": "https://franklinsquarepl.libcal.com/event/17319760",
+      "conf": true,
+      "src": "fslibrary.org",
+      "lastChecked": "2026-10-19"
     },
     {
       "id": "auto-ihop-varies-food",
       "type": "food",
       "name": "IHOP",
-      "deal": "Kids eat free with purchase of an adult meal",
+      "deal": "Kids eat free daily with purchase of an adult meal, evenings only",
       "day": "varies",
       "start": "16:00",
       "end": "21:00",
-      "loc": "Williston Park (near Mineola)",
-      "note": "Offered daily 4-9/10pm at participating locations; call ahead to confirm",
+      "loc": "Williston Park",
+      "note": "Call ahead to confirm location is participating; end time may be 9 or 10pm",
       "url": "",
       "conf": false,
       "src": "mommypoppins.com",
-      "lastChecked": "2026-10-12"
+      "lastChecked": "2026-10-19"
     }
   ]
 }
